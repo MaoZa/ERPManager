@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hxzy.dao.Tb_userMapper">
+  <resultMap id="BaseResultMap" type="com.hxzy.pojo.Tb_user">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="pwd" jdbcType="VARCHAR" property="pwd" />
+    <result column="setInstorage" jdbcType="BIT" property="setinstorage" />
+    <result column="setOutstorage" jdbcType="BIT" property="setoutstorage" />
+    <result column="setDeal" jdbcType="BIT" property="setdeal" />
+    <result column="setQuery" jdbcType="BIT" property="setquery" />
+    <result column="setBasic" jdbcType="BIT" property="setbasic" />
+    <result column="setSys" jdbcType="BIT" property="setsys" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, pwd, setInstorage, setOutstorage, setDeal, setQuery, setBasic, setSys
+  </sql>
+  <select id="selectByExample" parameterType="com.hxzy.pojo.Tb_userExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hxzy.pojo.Tb_userExample">
+    delete from tb_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hxzy.pojo.Tb_user">
+    insert into tb_user (id, name, pwd, 
+      setInstorage, setOutstorage, setDeal, 
+      setQuery, setBasic, setSys)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
+      #{setinstorage,jdbcType=BIT}, #{setoutstorage,jdbcType=BIT}, #{setdeal,jdbcType=BIT}, 
+      #{setquery,jdbcType=BIT}, #{setbasic,jdbcType=BIT}, #{setsys,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hxzy.pojo.Tb_user">
+    insert into tb_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="pwd != null">
+        pwd,
+      </if>
+      <if test="setinstorage != null">
+        setInstorage,
+      </if>
+      <if test="setoutstorage != null">
+        setOutstorage,
+      </if>
+      <if test="setdeal != null">
+        setDeal,
+      </if>
+      <if test="setquery != null">
+        setQuery,
+      </if>
+      <if test="setbasic != null">
+        setBasic,
+      </if>
+      <if test="setsys != null">
+        setSys,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="setinstorage != null">
+        #{setinstorage,jdbcType=BIT},
+      </if>
+      <if test="setoutstorage != null">
+        #{setoutstorage,jdbcType=BIT},
+      </if>
+      <if test="setdeal != null">
+        #{setdeal,jdbcType=BIT},
+      </if>
+      <if test="setquery != null">
+        #{setquery,jdbcType=BIT},
+      </if>
+      <if test="setbasic != null">
+        #{setbasic,jdbcType=BIT},
+      </if>
+      <if test="setsys != null">
+        #{setsys,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hxzy.pojo.Tb_userExample" resultType="java.lang.Long">
+    select count(*) from tb_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_user
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwd != null">
+        pwd = #{record.pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.setinstorage != null">
+        setInstorage = #{record.setinstorage,jdbcType=BIT},
+      </if>
+      <if test="record.setoutstorage != null">
+        setOutstorage = #{record.setoutstorage,jdbcType=BIT},
+      </if>
+      <if test="record.setdeal != null">
+        setDeal = #{record.setdeal,jdbcType=BIT},
+      </if>
+      <if test="record.setquery != null">
+        setQuery = #{record.setquery,jdbcType=BIT},
+      </if>
+      <if test="record.setbasic != null">
+        setBasic = #{record.setbasic,jdbcType=BIT},
+      </if>
+      <if test="record.setsys != null">
+        setSys = #{record.setsys,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_user
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      pwd = #{record.pwd,jdbcType=VARCHAR},
+      setInstorage = #{record.setinstorage,jdbcType=BIT},
+      setOutstorage = #{record.setoutstorage,jdbcType=BIT},
+      setDeal = #{record.setdeal,jdbcType=BIT},
+      setQuery = #{record.setquery,jdbcType=BIT},
+      setBasic = #{record.setbasic,jdbcType=BIT},
+      setSys = #{record.setsys,jdbcType=BIT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hxzy.pojo.Tb_user">
+    update tb_user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null">
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="setinstorage != null">
+        setInstorage = #{setinstorage,jdbcType=BIT},
+      </if>
+      <if test="setoutstorage != null">
+        setOutstorage = #{setoutstorage,jdbcType=BIT},
+      </if>
+      <if test="setdeal != null">
+        setDeal = #{setdeal,jdbcType=BIT},
+      </if>
+      <if test="setquery != null">
+        setQuery = #{setquery,jdbcType=BIT},
+      </if>
+      <if test="setbasic != null">
+        setBasic = #{setbasic,jdbcType=BIT},
+      </if>
+      <if test="setsys != null">
+        setSys = #{setsys,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hxzy.pojo.Tb_user">
+    update tb_user
+    set name = #{name,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      setInstorage = #{setinstorage,jdbcType=BIT},
+      setOutstorage = #{setoutstorage,jdbcType=BIT},
+      setDeal = #{setdeal,jdbcType=BIT},
+      setQuery = #{setquery,jdbcType=BIT},
+      setBasic = #{setbasic,jdbcType=BIT},
+      setSys = #{setsys,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
