@@ -6,7 +6,7 @@
 
 %>
 <%=user.getSetinstorage() %>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="/Css/style.css" rel="stylesheet" />
 <script src="/JS/onclock.JS"></script>
 <script src="/JS/menu.JS"></script>
@@ -32,7 +32,7 @@
       </tr>
       <tr>
      
-        <td align="center" class="word_Green">当 前 登 录 用 户 ：<%=session.getAttribute("username")%></td>
+        <td align="center" class="word_Green">当 前 登 录 用 户 ：<%=user.getName()%></td>
         <td width="10%">&nbsp;</td>
         <td colspan="2"><table width="100%" height="19" border="0" cellpadding="0" cellspacing="0">
           <tr>

@@ -1,15 +1,15 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <script language="javascript">
 function mycheck(form1){
 	if(form1.name.value==""){
-		alert("ÇëÌîĞ´²¿ÃÅÃû³Æ!");form1.name.focus();return false;
+		alert("è¯·å¡«å†™éƒ¨é—¨åç§°!");form1.name.focus();return false;
 	}
 }
 </script>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -24,7 +24,7 @@ function mycheck(form1){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">µ±Ç°Î»ÖÃ£º»ù´¡ĞÅÏ¢ &gt; ²¿ÃÅ¹ÜÀí &gt; Ìí¼Ó²¿ÃÅĞÅÏ¢ &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">å½“å‰ä½ç½®ï¼šåŸºç¡€ä¿¡æ¯ &gt; éƒ¨é—¨ç®¡ç† &gt; æ·»åŠ éƒ¨é—¨ä¿¡æ¯ &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -34,25 +34,25 @@ function mycheck(form1){
 		<form name="form1" method="post" action="branch.do?action=branchadd" onSubmit="return mycheck(form1)">
         <table width="96%" height="160" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
-            <td width="31%" align="center">²¿ÃÅÃû³Æ£º</td>
+            <td width="31%" align="center">éƒ¨é—¨åç§°ï¼š</td>
             <td width="69%" align="left"><input name="name" type="text" id="name" size="60"></td>
             </tr>
          <tr>
-           <td align="center">µç&nbsp;&nbsp;&nbsp;&nbsp;»°£º</td>
+           <td align="center">ç”µ&nbsp;&nbsp;&nbsp;&nbsp;è¯ï¼š</td>
            <td align="left"><input name="tel" type="text" id="tel"></td>
          </tr>
          <tr>
-           <td align="center">±¸&nbsp;&nbsp;&nbsp;&nbsp;×¢£º</td>
+           <td align="center">å¤‡&nbsp;&nbsp;&nbsp;&nbsp;æ³¨ï¼š</td>
            <td align="left"><input name="memo" type="text" id="memo" size="60">             </td>
          </tr>
          <tr>
            <td>&nbsp;</td>
            <td>
-             <input name="Submit" type="submit" class="btn_grey" value="±£´æ">
+             <input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜">
 &nbsp;
-<input name="Submit2" type="reset" class="btn_grey" value="ÖØÖÃ">
+<input name="Submit2" type="reset" class="btn_grey" value="é‡ç½®">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="·µ»Ø" onClick="window.location.href='branch.do?action=branchQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="è¿”å›" onClick="window.location.href='branch.do?action=branchQuery'"></td>
          </tr>
         </table>
 		</form>

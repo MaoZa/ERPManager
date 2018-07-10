@@ -1,12 +1,12 @@
-<%@ page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=utf-8" language="java"%>
 <jsp:useBean id="sysDAO" class="com.dao.SysDAO" scope="request"/>
 <%
 int rtn=sysDAO.sysinitialize();
 if(rtn==0){
-	out.println("<script>alert('系统初使化失败！');window.location.href='initialize.jsp';</script>");
+	out.println("<script>alert('绯荤粺鍒濅娇鍖栧け璐ワ紒');window.location.href='initialize.jsp';</script>");
 }else{
 
-	out.println("<script>alert('系统初使化成功！\\r当前系统中只有mr一个用户，请重新登录！');window.location.href='index.jsp'</script>");
-	//out.println("<script>alert('系统初使化成功！\\r当前系统中只有mr一个用户，请重新登录！');</script>");
+	out.println("<script>alert('绯荤粺鍒濅娇鍖栨垚鍔燂紒\\r褰撳墠绯荤粺涓彧鏈塵r涓�涓敤鎴凤紝璇烽噸鏂扮櫥褰曪紒');window.location.href='index.jsp'</script>");
+	//out.println("<script>alert('绯荤粺鍒濅娇鍖栨垚鍔燂紒\\r褰撳墠绯荤粺涓彧鏈塵r涓�涓敤鎴凤紝璇烽噸鏂扮櫥褰曪紒');</script>");
 }
 %>

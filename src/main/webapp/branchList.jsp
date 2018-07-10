@@ -1,9 +1,10 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
+<%@ page import="com.actionForm.BranchForm" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>物资管理系统</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>

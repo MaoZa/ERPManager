@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page contentType="text/html; charset=utf-8" language="java"%>
 <%@page import="com.actionForm.LoanForm"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.core.GetTime"%>
@@ -6,28 +6,28 @@
 <script language="javascript">
 function check(myform){
 	if(myform.flag[0].checked==false && myform.flag[1].checked==false && myform.flag[2].checked==false){
-		alert("ÇëÑ¡Ôñ²éÑ¯·½Ê½!");return false;
+		alert("è¯·é€‰æ‹©æŸ¥è¯¢æ–¹å¼!");return false;
 	}
 	if (myform.flag[1].checked){
 		if(myform.sdate.value==""){
-			alert("ÇëÊäÈë¿ªÊ¼ÈÕÆÚ");myform.sdate.focus();return false;
+			alert("è¯·è¾“å…¥å¼€å§‹æ—¥æœŸ");myform.sdate.focus();return false;
 		}
 		if(CheckDate(myform.sdate.value)){
-			alert("ÄúÊäÈëµÄ¿ªÊ¼ÈÕÆÚ²»ÕıÈ·£¡\n Çë×¢ÒâÈÕÆÚ¸ñÊ½»òÈòÄê£¡");myform.sdate.focus();return false;
+			alert("æ‚¨è¾“å…¥çš„å¼€å§‹æ—¥æœŸä¸æ­£ç¡®ï¼\n è¯·æ³¨æ„æ—¥æœŸæ ¼å¼æˆ–é—°å¹´ï¼");myform.sdate.focus();return false;
 		}
 		if(myform.edate.value==""){
-			alert("ÇëÊäÈë½áÊøÈÕÆÚ");myform.edate.focus();return false;
+			alert("è¯·è¾“å…¥ç»“æŸæ—¥æœŸ");myform.edate.focus();return false;
 		}
 		if(CheckDate(myform.edate.value)){
-			alert("ÄúÊäÈëµÄ½áÊøÈÕÆÚ²»ÕıÈ·£¡\n Çë×¢ÒâÈÕÆÚ¸ñÊ½»òÈòÄê£¡");myform.edate.focus();return false;
+			alert("æ‚¨è¾“å…¥çš„ç»“æŸæ—¥æœŸä¸æ­£ç¡®ï¼\n è¯·æ³¨æ„æ—¥æœŸæ ¼å¼æˆ–é—°å¹´ï¼");myform.edate.focus();return false;
 		}
 	}
 }
 </script>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 <script src="JS/function.js"></script>
 </head>
@@ -42,9 +42,9 @@ function check(myform){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom"> µ±Ç°Î»ÖÃ£ºÎï×ÊÈë¿â
+          <td width="70%" valign="bottom"> å½“å‰ä½ç½®ï¼šç‰©èµ„å…¥åº“
             &gt;
-            ½è³ö¹é»¹
+            å€Ÿå‡ºå½’è¿˜
             &gt;&gt;&gt; </td>
         </tr>
       </table>
@@ -60,23 +60,23 @@ function check(myform){
             <tr>
               <td rowspan="2" align="center">&nbsp;<img src="images/search.gif" width="45" height="28"></td>
               <td height="14"><div><input name="flag" type="checkbox" class="noborder" value="a" checked>
-                ÇëÑ¡Ôñ²éÑ¯ÒÀ¾İ£º
+                è¯·é€‰æ‹©æŸ¥è¯¢ä¾æ®ï¼š
                   <select name="f" class="wenbenkuang" id="f">
-                    <option value="lno">½è³öµ¥ºÅ</option>
-                    <option value="borrowperson">½èÓÃÈË</option>
-                    <option value="principal">¸ºÔğÈË</option>
-                    <option value="username">²Ù×÷Ô±</option>
+                    <option value="lno">å€Ÿå‡ºå•å·</option>
+                    <option value="borrowperson">å€Ÿç”¨äºº</option>
+                    <option value="principal">è´Ÿè´£äºº</option>
+                    <option value="username">æ“ä½œå‘˜</option>
                    </select>
                   <input name="key" type="text" id="key" size="50">
-                  <input name="Submit" type="submit" class="btn_grey" value="²éÑ¯" onClick="return check(myform)"></div></td>
+                  <input name="Submit" type="submit" class="btn_grey" value="æŸ¥è¯¢" onClick="return check(myform)"></div></td>
             </tr>
             <tr>
               <td><input name="flag" type="checkbox" class="noborder" id="flag" value="b"><input name="flag" type="checkbox" class="noborder" id="flag" value="c" checked="checked" style="display:none">
-½è³öÊ±¼ä£º                ´Ó
+å€Ÿå‡ºæ—¶é—´ï¼š                ä»
   <input name="sdate" type="text" id="sdate">
-µ½
+åˆ°
 <input name="edate" type="text" id="edate">
-(ÈÕÆÚ¸ñÊ½Îª£º2006-07-05)<input name="state" type="hidden" id="state" value="1">
+(æ—¥æœŸæ ¼å¼ä¸ºï¼š2006-07-05)<input name="state" type="hidden" id="state" value="1">
 </td>
             </tr>
           </table>
@@ -88,7 +88,7 @@ if(list.size()==0){
 %>
           <table width="98%" height="30"  border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
             <tr>
-              <td height="36" align="center">Ã»ÓĞ·ûºÏÌõ¼şµÄ½è³öµ¥ĞÅÏ¢£¡</td>
+              <td height="36" align="center">æ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„å€Ÿå‡ºå•ä¿¡æ¯ï¼</td>
             </tr>
           </table>
           <%
@@ -106,14 +106,14 @@ if(list.size()==0){
   %>
           <table width="98%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#D2E3E6" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-    <td width="19%">½è³öµ¥ºÅ</td>
-    <td width="24%">Îï×ÊÃû³Æ [ <span class="word_grey">¹æ¸ñ</span> ]</td>
-    <td width="8%">½èÓÃÈË</td>
-    <td width="9%">µç»°</td>
-    <td width="7%">¸ºÔğÈË</td>
-    <td width="8%">²Ù×÷Ô±</td>
-    <td width="20%">½è³öÉóºËÊ±¼ä</td>
-    <td width="4%">¹é»¹</td>
+    <td width="19%">å€Ÿå‡ºå•å·</td>
+    <td width="24%">ç‰©èµ„åç§° [ <span class="word_grey">è§„æ ¼</span> ]</td>
+    <td width="8%">å€Ÿç”¨äºº</td>
+    <td width="9%">ç”µè¯</td>
+    <td width="7%">è´Ÿè´£äºº</td>
+    <td width="8%">æ“ä½œå‘˜</td>
+    <td width="20%">å€Ÿå‡ºå®¡æ ¸æ—¶é—´</td>
+    <td width="4%">å½’è¿˜</td>
   </tr>
 <%
 for(int i=0;i<list.size();i++){

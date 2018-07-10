@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.actionForm.UserForm" %>
 <%
 UserForm userForm=(UserForm)request.getAttribute("userList");
 if(userForm==null){
 %>
 <script language="javascript">
-alert("ÄúµÄ²Ù×÷ÓĞÎó£¡");
+alert("æ‚¨çš„æ“ä½œæœ‰è¯¯ï¼");
 window.location.href="user.do?action=userQuery";
 </script>
 <%
@@ -21,8 +21,8 @@ window.location.href="user.do?action=userQuery";
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -37,7 +37,7 @@ window.location.href="user.do?action=userQuery";
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">µ±Ç°Î»ÖÃ£ºÏµÍ³¹ÜÀí &gt; ÓÃ»§¹ÜÀí &gt; ĞŞ¸ÄÓÃ»§È¨ÏŞ &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">å½“å‰ä½ç½®ï¼šç³»ç»Ÿç®¡ç† &gt; ç”¨æˆ·ç®¡ç† &gt; ä¿®æ”¹ç”¨æˆ·æƒé™ &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -48,39 +48,39 @@ window.location.href="user.do?action=userQuery";
         <table width="96%" height="200" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
             <td width="16%" align="center">&nbsp;</td>
-            <td width="13%" align="left">ÓÃ»§Ãû³Æ£º</td>
+            <td width="13%" align="left">ç”¨æˆ·åç§°ï¼š</td>
             <td colspan="5" align="left"><input name="id" type="hidden" id="id" value="<%=id%>">
               <input name="name" type="text" id="name" size="60" readonly="yes" value="<%=name%>"></td>
             <td width="18%" align="left">&nbsp;</td>
           </tr>
          <tr>
             <td align="center">&nbsp;</td>
-            <td align="left">Îï×ÊÈë¿â£º</td>
+            <td align="left">ç‰©èµ„å…¥åº“ï¼š</td>
             <td width="11%" align="left"><input name="setInstorage" type="checkbox" class="noborder" value="1" <%if(setInstorage.equals(new Byte("1"))){out.println("checked");}%>></td>
-            <td width="13%" align="left">Îï×Ê³ö¿â£º</td>
+            <td width="13%" align="left">ç‰©èµ„å‡ºåº“ï¼š</td>
             <td width="11%" align="left"><input name="setOutstorage" type="checkbox" class="noborder" value="1" <%if(setOutstorage.equals(new Byte("1"))){out.println("checked");}%>></td>
-            <td width="13%" align="left">Îï×Ê´¦Àí£º</td>
+            <td width="13%" align="left">ç‰©èµ„å¤„ç†ï¼š</td>
             <td align="left"><input name="setDeal" type="checkbox" class="noborder" value="1" <%if(setDeal.equals(new Byte("1"))){out.println("checked");}%>></td>
             <td align="left">&nbsp;</td>
          </tr>
          <tr>
            <td align="center">&nbsp;</td>
-           <td align="left">²éÑ¯Í³¼Æ£º</td>
+           <td align="left">æŸ¥è¯¢ç»Ÿè®¡ï¼š</td>
            <td align="left"><input name="setQuery" type="checkbox" class="noborder" value="1" <%if(setQuery.equals(new Byte("1"))){out.println("checked");}%>></td>
-           <td align="left">»ù´¡ĞÅÏ¢£º</td>
+           <td align="left">åŸºç¡€ä¿¡æ¯ï¼š</td>
            <td align="left"><input name="setBasic" type="checkbox" class="noborder" value="1" <%if(setBasic.equals(new Byte("1"))){out.println("checked");}%>></td>
-           <td align="left">ÏµÍ³¹ÜÀí£º</td>
+           <td align="left">ç³»ç»Ÿç®¡ç†ï¼š</td>
            <td align="left"><input name="setSys" type="checkbox" class="noborder" value="1" <%if(setSys.equals(new Byte("1"))){out.println("checked");}%>></td>
            <td align="left">&nbsp;</td>
          </tr>
          <tr>
            <td>&nbsp;</td>
            <td>&nbsp;</td>
-           <td colspan="5"><input name="Submit" type="submit" class="btn_grey" value="±£´æ">
+           <td colspan="5"><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜">
 &nbsp;
-<input name="Submit2" type="reset" class="btn_grey" value="ÖØÖÃ">
+<input name="Submit2" type="reset" class="btn_grey" value="é‡ç½®">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="·µ»Ø" onClick="window.location.href='user.do?action=userQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="è¿”å›" onClick="window.location.href='user.do?action=userQuery'"></td>
            <td>&nbsp;</td>
          </tr>
         </table>

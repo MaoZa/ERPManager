@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page contentType="text/html; charset=utf-8" language="java"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.LoanForm"%>
 <%@page import="com.dao.GoodsDAO"%>
@@ -6,8 +6,8 @@
 <%@page import="java.util.Date"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>���ʹ���ϵͳ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>物资管理系统</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -21,8 +21,8 @@
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom"> ��ǰλ�ã���ѯͳ��
-            &gt; �����ѯ&nbsp;&gt; �������ϸ��Ϣ            &gt;&gt;&gt; </td>
+          <td width="70%" valign="bottom"> 当前位置：查询统计
+            &gt; 借出查询&nbsp;&gt; 借出单详细信息            &gt;&gt;&gt; </td>
         </tr>
       </table>
       <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -38,7 +38,7 @@ if(LoanForm==null){
 %>
                   <table width="98%" height="30"  border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
                     <tr>
-                      <td height="36" align="center">û�з��������Ľ������Ϣ��</td>
+                      <td height="36" align="center">没有符合条件的借出单信息！</td>
                     </tr>
                   </table>
                   <%
@@ -75,67 +75,67 @@ if(LoanForm==null){
   short state=LoanForm.getState();
     switch(state){
     case 0:
-    strState="δ���";
+    strState="未审核";
     break;
     case 1:
-    strState="�����";
+    strState="已审核";
     break;
     default:
-    strState="�ѹ黹";
+    strState="已归还";
 	}
 %>
                   <table width="100%" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td align="center"><table width="98%" height="137"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#FFFFFF" bordercolordark="#D2E3E6">
                           <tr>
-                            <td width="16%" style="padding:4px;">������ţ�</td>
+                            <td width="16%" style="padding:4px;">借出单号：</td>
                             <td width="36%" style="padding:4px;"><%=lno%></td>
-                            <td width="13%" style="padding:4px;">���ʱ�䣺</td>
+                            <td width="13%" style="padding:4px;">借出时间：</td>
                             <td width="35%" style="padding:4px;"><%=createTime%></td>
                           </tr>
                           <tr>
-                            <td style="padding:4px;">�������ƣ�</td>
+                            <td style="padding:4px;">物资名称：</td>
                             <td style="padding:4px;"><%=goodsname%></td>
-                            <td style="padding:4px;">��&nbsp;&nbsp;&nbsp;&nbsp;��</td>
+                            <td style="padding:4px;">规&nbsp;&nbsp;&nbsp;&nbsp;格：</td>
                             <td style="padding:4px;"><%=spec%></td>
                           </tr>
                           <tr>
-                            <td style="padding:4px;">���ʵ��ۣ�</td>
+                            <td style="padding:4px;">物资单价：</td>
                             <td style="padding:4px;"><%=price%></td>
-                            <td style="padding:4px;">��&nbsp;&nbsp;&nbsp;&nbsp;����</td>
+                            <td style="padding:4px;">数&nbsp;&nbsp;&nbsp;&nbsp;量：</td>
                             <td style="padding:4px;"><%=number%>(<%=unit%>)</td>
                           </tr>
                           <tr>
-                            <td style="padding:4px;">��&nbsp;��&nbsp;�ˣ�</td>
+                            <td style="padding:4px;">借&nbsp;用&nbsp;人：</td>
                             <td style="padding:4px;"><%=borrowperson%></td>
-                            <td style="padding:4px;">�����˵绰��</td>
+                            <td style="padding:4px;">借用人电话：</td>
                             <td style="padding:4px;"><%=btel%></td>
                           </tr>
                           <tr>
-                            <td style="padding:4px;">�����˹�����λ��</td>
+                            <td style="padding:4px;">借用人工作单位：</td>
                             <td style="padding:4px;"><%=borrowunit%></td>
-                            <td style="padding:4px;">��&nbsp;��&nbsp;�ˣ�</td>
+                            <td style="padding:4px;">负&nbsp;责&nbsp;人：</td>
                             <td style="padding:4px;"><%=principal%></td>
                           </tr>
                           <tr>
-                            <td style="padding:4px;">��&nbsp;��&nbsp;Ա��</td>
+                            <td style="padding:4px;">操&nbsp;作&nbsp;员：</td>
                             <td style="padding:4px;"><%=username%></td>
-                            <td style="padding:4px;">״&nbsp;&nbsp;&nbsp;&nbsp;̬��</td>
+                            <td style="padding:4px;">状&nbsp;&nbsp;&nbsp;&nbsp;态：</td>
                             <td style="padding:4px;"><%=strState%></td>
                           </tr>
 						   <%if(approveTime!=null){%>
                           <tr>
-                            <td style="padding:4px;">��&nbsp;��&nbsp;�ˣ�</td>
+                            <td style="padding:4px;">审&nbsp;核&nbsp;人：</td>
                             <td style="padding:4px;"><%=taster%></td>
-                            <td style="padding:4px;">���ʱ�䣺</td>
+                            <td style="padding:4px;">审核时间：</td>
                             <td style="padding:4px;"><%=approveTime%></td>
                           </tr>
 						  <%}%>
 						  <%if(backperson!=null && approveTime!=null){%>
                           <tr>
-                            <td style="padding:4px;">��&nbsp;��&nbsp;�ˣ�</td>
+                            <td style="padding:4px;">归&nbsp;还&nbsp;人：</td>
                             <td style="padding:4px;"><%=backperson%></td>
-                            <td style="padding:4px;">�黹ʱ�䣺</td>
+                            <td style="padding:4px;">归还时间：</td>
                             <td style="padding:4px;"><%=backtime%></td>
                           </tr>
 						  <%}%>
@@ -150,7 +150,7 @@ if(LoanForm==null){
                   </table>
                   <table width="98%" height="46" border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td align="right">&nbsp;<a href="#" onClick="history.back()">[����]</a></td>
+                      <td align="right">&nbsp;<a href="#" onClick="history.back()">[返回]</a></td>
                     </tr>
                   </table></td>
               </tr>

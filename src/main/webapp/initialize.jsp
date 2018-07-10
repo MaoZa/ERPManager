@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>���ʹ���ϵͳ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>物资管理系统</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -17,7 +17,7 @@
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">��ǰλ�ã�ϵͳ���� &gt; ϵͳ��ʹ�� &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">当前位置：系统管理 &gt; 系统初使化 &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -27,11 +27,11 @@
           <form name="form1" method="post" action="initialize_deal.jsp">
         <table width="76%" height="277" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
-            <td align="center">ϵͳ��ʹ��������������ݿ����б��������ȱ������ݿ⣬��ִ��ϵͳ��ʹ��������ִ��ϵͳ��ʹ�������뵥��������ϵͳ��ʹ������ť��</td>
+            <td align="center">系统初使化操作将清空数据库所有表，建议先备份数据库，再执行系统初使化操作！执行系统初使化操作请单击“进行系统初使化”按钮。</td>
             </tr>
          <tr>
            <td align="center" valign="top">
-             <input name="Submit" type="submit" class="btn_grey" value="����ϵͳ��ʹ��">
+             <input name="Submit" type="submit" class="btn_grey" value="进行系统初使化">
 &nbsp;&nbsp;</td>
          </tr>
         </table>

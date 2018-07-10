@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=utf-8"%>
 <table width="99%" height="55"  border="0" align="center" cellpadding="-2" cellspacing="-2">
   <tr>
 	<td height="2" colspan="4"></td>
 	</tr>
   <tr>
 	<td width="124" height="23">&nbsp;</td>
-	<td valign="bottom" align="center"> CopyRight &copy; 2016 www.wuliu.com</td>
+	<td valign="bottom" align="center"> CopyRight &copy; 2006 www.mingrisoft.com</td>
 	<td width="141">&nbsp;</td>
   </tr>
   <tr>

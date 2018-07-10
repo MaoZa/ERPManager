@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <html>
 <head>
 <title>中转页</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 <jsp:forward page="login.jsp"/>

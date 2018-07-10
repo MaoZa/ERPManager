@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page contentType="text/html; charset=utf-8" language="java"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.BranchForm"%>
 <%@page import="com.actionForm.StorageForm"%>
@@ -8,38 +8,38 @@
 <%
 boolean flag=false;
 
-  //»ñÈ¡È«²¿Îï×ÊĞÅÏ¢
+  //è·å–å…¨éƒ¨ç‰©èµ„ä¿¡æ¯
     List listgoods = null;
     OutStorageDAO outStorageDAO = new OutStorageDAO();
-    //listgoods = getUseDAO.storage_query();     //²éÑ¯¿â´æÎï×Ê
+    //listgoods = getUseDAO.storage_query();     //æŸ¥è¯¢åº“å­˜ç‰©èµ„
     listgoods=(List)request.getAttribute("GoodsStorage");
    // session.setAttribute("listgoods", listgoods);
-  //»ñÈ¡È«²¿²¿ÃÅĞÅÏ¢
+  //è·å–å…¨éƒ¨éƒ¨é—¨ä¿¡æ¯
     List listbranch = null;
     BranchDAO branchDAO = new BranchDAO();
     listbranch = branchDAO.query(null);
   if (listgoods.size() <= 0) {
-    out.println("<script language='javascript'>alert('ÇëÏÈ½«Îï×ÊÈë¿â£¬ÔÙ½øĞĞÁìÓÃ!');window.location.href='goods.do?action=goodsRequest';</script>");
+    out.println("<script language='javascript'>alert('è¯·å…ˆå°†ç‰©èµ„å…¥åº“ï¼Œå†è¿›è¡Œé¢†ç”¨!');window.location.href='goods.do?action=goodsRequest';</script>");
   }
   else if (listbranch.size() <= 0) {
-    out.println("<script language='javascript'>alert('ÇëÏÈÂ¼Èë²¿ÃÅĞÅÏ¢');window.location.href='branch.do?action=branchQuery';</script>");
+    out.println("<script language='javascript'>alert('è¯·å…ˆå½•å…¥éƒ¨é—¨ä¿¡æ¯');window.location.href='branch.do?action=branchQuery';</script>");
   }
   else {
 %>
 <script language="javascript">
 function mycheck(form){
 	if(form.number.value<=0){
-		alert("ÇëÊäÈëÊıÁ¿!");form.number.focus();return false;
+		alert("è¯·è¾“å…¥æ•°é‡!");form.number.focus();return false;
 	}
 	if(form.principal.value==""){
-		alert("ÇëÌîĞ´¸ºÔğÈËĞÕÃû!");form.principal.focus();return false;
+		alert("è¯·å¡«å†™è´Ÿè´£äººå§“å!");form.principal.focus();return false;
 	}
 }
 </script>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -53,8 +53,8 @@ function mycheck(form){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom"> µ±Ç°Î»ÖÃ£ºÎï×Ê³ö¿â
-            &gt; ²¿ÃÅÁìÓÃ
+          <td width="70%" valign="bottom"> å½“å‰ä½ç½®ï¼šç‰©èµ„å‡ºåº“
+            &gt; éƒ¨é—¨é¢†ç”¨
             &gt;&gt;&gt; </td>
         </tr>
       </table>
@@ -68,32 +68,32 @@ function mycheck(form){
                   <script language="javascript">
 				  function subcheck(myform){
 				  	if(isNaN(myform.number.value)){
-						alert("ÄúÊäÈëµÄÊıÁ¿²»ºÏ·¨£¬ÇëÖØĞÂÊäÈë!");myform.number.focus();return;
+						alert("æ‚¨è¾“å…¥çš„æ•°é‡ä¸åˆæ³•ï¼Œè¯·é‡æ–°è¾“å…¥!");myform.number.focus();return;
 					}
 				  	if(myform.number.value<=0){
-						alert("ÇëÊäÈëÊıÁ¿!");myform.number.focus();return;
+						alert("è¯·è¾“å…¥æ•°é‡!");myform.number.focus();return;
 					}
 					if(myform.stocknumber.value-myform.number.value<0){
-						alert("¿â´æÊıÁ¿²»×ã£¬ÇëÖØĞÂÊäÈë!");myform.number.focus();return;
+						alert("åº“å­˜æ•°é‡ä¸è¶³ï¼Œè¯·é‡æ–°è¾“å…¥!");myform.number.focus();return;
 					}
-					myform.totalpay.value=(myform.number.value*myform.price.value).toFixed(2);     //±£ÁôÁ½Î»Ğ¡Êı
+					myform.totalpay.value=(myform.number.value*myform.price.value).toFixed(2);     //ä¿ç•™ä¸¤ä½å°æ•°
 				  }
 		  function ChangeItem(id){
 		  	window.location.href="getUse.do?action=getuseaddquery&id="+id;
 		  }
 		  </script>
-                  <td width="34%" align="left"style="padding-left:10px">Îï×ÊÃû³Æ£º</td>
+                  <td width="34%" align="left"style="padding-left:10px">ç‰©èµ„åç§°ï¼š</td>
                   <td width="66%" align="left"style="padding-left:10px"><select name="goodsid" class="select" id="goodsid" onChange="ChangeItem(this.value)">
                     <%
                   //List list=(List)request.getAttribute("GoodsStorage");
-                  int selgoodsId=request.getAttribute("id").hashCode();     //Ñ¡ÔñµÄÎï×ÊID
-                  String selProducer="";     //Éú²ú³§¼Ò
-                  String selUnit="";     //µ¥Î»
-                  float selPrice=0.0f;     //µ¥¼Û
-                  int selstoragenumber=0;     //¿â´æÊıÁ¿
-                  String goodsname="";     //Îï×ÊÃû³Æ
-                  int goodsId=0;     //Îï×ÊID
-                  String spec="";     //¹æ¸ñ
+                  int selgoodsId=request.getAttribute("id").hashCode();     //é€‰æ‹©çš„ç‰©èµ„ID
+                  String selProducer="";     //ç”Ÿäº§å‚å®¶
+                  String selUnit="";     //å•ä½
+                  float selPrice=0.0f;     //å•ä»·
+                  int selstoragenumber=0;     //åº“å­˜æ•°é‡
+                  String goodsname="";     //ç‰©èµ„åç§°
+                  int goodsId=0;     //ç‰©èµ„ID
+                  String spec="";     //è§„æ ¼
                   float amount=0.0f;
                 //  for(int i=0;i<list.size();i++){
                   for(int i=0;i<listgoods.size();i++){
@@ -123,26 +123,26 @@ function mycheck(form){
                   </select></td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">Éú²ú³§¼Ò£º</td>
+                  <td align="left"style="padding-left:10px">ç”Ÿäº§å‚å®¶ï¼š</td>
                   <td align="left"style="padding-left:10px"><%=selProducer%></td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">µ¥&nbsp;&nbsp;&nbsp;&nbsp;¼Û£º              </td>
+                  <td align="left"style="padding-left:10px">å•&nbsp;&nbsp;&nbsp;&nbsp;ä»·ï¼š              </td>
                   <td align="left"style="padding-left:10px"><input name="price" type="text" id="price" readonly="readonly" size="10" value="<%=selPrice%>">
-Ôª </td>
+å…ƒ </td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">¿â´æÊıÁ¿£º              </td>
+                  <td align="left"style="padding-left:10px">åº“å­˜æ•°é‡ï¼š              </td>
                   <td align="left"style="padding-left:10px"><input name="stocknumber" type="text" id="stocknumber"  readonly="yes" value="<%=selstoragenumber%>" size="8">
                   <%=selUnit%></td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">ÁìÓÃÊıÁ¿£º              </td>
+                  <td align="left"style="padding-left:10px">é¢†ç”¨æ•°é‡ï¼š              </td>
                   <td align="left"style="padding-left:10px"><input name="number" type="text" id="number" value="1" size="8" onBlur="subcheck(form1)">
                     <%=selUnit%></td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">²¿ÃÅÃû³Æ£º</td>
+                  <td align="left"style="padding-left:10px">éƒ¨é—¨åç§°ï¼š</td>
                   <td align="left"style="padding-left:10px"><select name="branchid" id="branchid">
                     <%
                     Iterator itbranch = listbranch.iterator();
@@ -158,21 +158,21 @@ function mycheck(form){
                   </select></td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">¸º&nbsp;Ôğ&nbsp;ÈË£º</td>
+                  <td align="left"style="padding-left:10px">è´Ÿ&nbsp;è´£&nbsp;äººï¼š</td>
                   <td align="left"style="padding-left:10px"><input name="principal" type="text" id="principal" size="20"></td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">ºÏ¼Æ½ğ¶î£º</td>
+                  <td align="left"style="padding-left:10px">åˆè®¡é‡‘é¢ï¼š</td>
                   <td align="left"style="padding-left:10px"><input name="totalpay" type="text" id="totalpay"  size="20" value="<%=amount%>" readonly="yes" >
-Ôª </td>
+å…ƒ </td>
                 </tr>
                 <tr>
-                  <td align="left"style="padding-left:10px">²Ù&nbsp;×÷&nbsp;Ô±£º</td>
+                  <td align="left"style="padding-left:10px">æ“&nbsp;ä½œ&nbsp;å‘˜ï¼š</td>
                   <td align="left"style="padding-left:10px"><input name="username" type="text" id="username" value="<%=session.getAttribute("username")%>" size="20" readonly="yes"></td>
                 </tr>
                 <tr>
-                  <td colspan="2" align="center"style="padding-left:10px"><input name="Submit" type="submit" class="btn_grey" value="±£´æ"> &nbsp;
-                  <input name="Submit2" type="reset" class="btn_grey" value="ÖØÖÃ"></td>
+                  <td colspan="2" align="center"style="padding-left:10px"><input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜"> &nbsp;
+                  <input name="Submit2" type="reset" class="btn_grey" value="é‡ç½®"></td>
                 </tr>
               </table>
             </form>

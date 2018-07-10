@@ -1,5 +1,5 @@
-var menuOffX=0	//²Ëµ¥¾àÁ¬½ÓÎÄ×Ö×î×ó¶Ë¾àÀë
-var menuOffY=18	//²Ëµ¥¾àÁ¬½ÓÎÄ×Ö¶¥¶Ë¾àÀë
+var menuOffX=0	//èœå•è·è¿æ¥æ–‡å­—æœ€å·¦ç«¯è·ç¦»
+var menuOffY=18	//èœå•è·è¿æ¥æ–‡å­—é¡¶ç«¯è·ç¦»
 var fo_shadows=new Array()
 var linkset=new Array()
 var ie4=document.all&&navigator.userAgent.indexOf("Opera")==-1
@@ -176,30 +176,30 @@ function outbg(tdbg){
 tdbg.style.background='url(images/item_out.gif)'
 tdbg.style.border=''
 }
-var instoragemenu='<div bgcolor=yellow style=z-index:100><table width=60 bgcolor=yellow ><tr><td id=stock onMouseOver=overbg(stock) onMouseOut=outbg(stock)><a href=instorage.do?action=changeGoods>²É¹ºµÇ¼Ç</a></td></tr>\
-<tr><td id=instorage onMouseOver=overbg(instorage) onMouseOut=outbg(instorage)><a href=ifDeal.do?action=inStockQuery>ÉóºËÈë¿â</a></td></tr>\
-<tr><td id=back onMouseOver=overbg(back) onMouseOut=outbg(back)><a href=ifDeal.do?action=loanBackQuery>½è³ö¹é»¹</a></td></tr>\
+var instoragemenu='<div bgcolor=yellow style=z-index:100><table width=60 bgcolor=yellow ><tr><td id=stock onMouseOver=overbg(stock) onMouseOut=outbg(stock)><a href=instorage.do?action=changeGoods>é‡‡è´­ç™»è®°</a></td></tr>\
+<tr><td id=instorage onMouseOver=overbg(instorage) onMouseOut=outbg(instorage)><a href=ifDeal.do?action=inStockQuery>å®¡æ ¸å…¥åº“</a></td></tr>\
+<tr><td id=back onMouseOver=overbg(back) onMouseOut=outbg(back)><a href=ifDeal.do?action=loanBackQuery>å€Ÿå‡ºå½’è¿˜</a></td></tr>\
 </table></div>'
-var outstoragemenu='<table width=60 bgcolor=yellow ><tr><td id=getuse onMouseOver=overbg(getuse) onMouseOut=outbg(getuse)><a href=getUse.do?action=getuseaddquery>²¿ÃÅÁìÓÃ</a></td></tr>\
-<tr><td id=loan onMouseOver=overbg(loan) onMouseOut=outbg(loan)><a href=loan.do?action=loanaddquery>Îï×Ê½è³ö</a></td></tr>\
-<tr><td id=outstorage onMouseOver=overbg(outstorage) onMouseOut=outbg(outstorage)><a href=ifDeal.do?action=loanApproveQuery>½è³öÉóºË</a></td></tr>\
+var outstoragemenu='<table width=60 bgcolor=yellow ><tr><td id=getuse onMouseOver=overbg(getuse) onMouseOut=outbg(getuse)><a href=getUse.do?action=getuseaddquery>éƒ¨é—¨é¢†ç”¨</a></td></tr>\
+<tr><td id=loan onMouseOver=overbg(loan) onMouseOut=outbg(loan)><a href=loan.do?action=loanaddquery>ç‰©èµ„å€Ÿå‡º</a></td></tr>\
+<tr><td id=outstorage onMouseOver=overbg(outstorage) onMouseOut=outbg(outstorage)><a href=ifDeal.do?action=loanApproveQuery>å€Ÿå‡ºå®¡æ ¸</a></td></tr>\
 </table>'
-var dealmenu='<table width=70 bgcolor=yellow ><tr><td id=materialcheck onMouseOver=overbg(materialcheck) onMouseOut=outbg(materialcheck)><a href=storageCheck.jsp>¿â´æÅÌµã</a></td></tr>\
-<tr><td id=damage onMouseOver=overbg(damage) onMouseOut=outbg(damage)><a href=damage.do?action=damageaddquery>²¿ÃÅ±¨Ëğ</a></td></tr>\
+var dealmenu='<table width=70 bgcolor=yellow ><tr><td id=materialcheck onMouseOver=overbg(materialcheck) onMouseOut=outbg(materialcheck)><a href=storageCheck.jsp>åº“å­˜ç›˜ç‚¹</a></td></tr>\
+<tr><td id=damage onMouseOver=overbg(damage) onMouseOut=outbg(damage)><a href=damage.do?action=damageaddquery>éƒ¨é—¨æŠ¥æŸ</a></td></tr>\
 </table>'
-var querymenu='<table width=80 bgcolor=yellow ><tr><td id=querystock onMouseOver=overbg(querystock) onMouseOut=outbg(querystock)><a href=ifDeal.do?action=stockQuery>²É¹ºµ¥²éÑ¯</a></td></tr>\
-<tr><td id=queryinstorage onMouseOver=overbg(queryinstorage) onMouseOut=outbg(queryinstorage)><a href=ifDeal.do?action=inStorageSQuery>Èë¿â²éÑ¯</a></td></tr>\
-<tr><td id=querygetuse onMouseOver=overbg(querygetuse) onMouseOut=outbg(querygetuse)><a href=ifDeal.do?action=getuseQuery>²¿ÃÅÁìÓÃ²éÑ¯</a></td></tr>\
-<tr><td id=getuseTotal onMouseOver=overbg(getuseTotal) onMouseOut=outbg(getuseTotal)><a href=ifDeal.do?action=getuseTotal>²¿ÃÅÁìÓÃ»ã×Ü</a></td></tr>\
-<tr><td id=querydamage onMouseOver=overbg(querydamage) onMouseOut=outbg(querydamage)><a href=ifDeal.do?action=damageQuery>²¿ÃÅ±¨Ëğ²éÑ¯</a></td></tr>\
-<tr><td id=damageTotal onMouseOver=overbg(damageTotal) onMouseOut=outbg(damageTotal)><a href=ifDeal.do?action=damageTotal>²¿ÃÅ±¨Ëğ»ã×Ü</a></td></tr>\
-<tr><td id=queryloan onMouseOver=overbg(queryloan) onMouseOut=outbg(queryloan)><a href=ifDeal.do?action=loanQuery>½è³ö²éÑ¯</a></td></tr>\
-<tr><td id=total onMouseOver=overbg(total) onMouseOut=outbg(total)><a href=ifDeal.do?action=branchTotal>²¿ÃÅ»ã×Ü</a></td></tr>\
+var querymenu='<table width=80 bgcolor=yellow ><tr><td id=querystock onMouseOver=overbg(querystock) onMouseOut=outbg(querystock)><a href=ifDeal.do?action=stockQuery>é‡‡è´­å•æŸ¥è¯¢</a></td></tr>\
+<tr><td id=queryinstorage onMouseOver=overbg(queryinstorage) onMouseOut=outbg(queryinstorage)><a href=ifDeal.do?action=inStorageSQuery>å…¥åº“æŸ¥è¯¢</a></td></tr>\
+<tr><td id=querygetuse onMouseOver=overbg(querygetuse) onMouseOut=outbg(querygetuse)><a href=ifDeal.do?action=getuseQuery>éƒ¨é—¨é¢†ç”¨æŸ¥è¯¢</a></td></tr>\
+<tr><td id=getuseTotal onMouseOver=overbg(getuseTotal) onMouseOut=outbg(getuseTotal)><a href=ifDeal.do?action=getuseTotal>éƒ¨é—¨é¢†ç”¨æ±‡æ€»</a></td></tr>\
+<tr><td id=querydamage onMouseOver=overbg(querydamage) onMouseOut=outbg(querydamage)><a href=ifDeal.do?action=damageQuery>éƒ¨é—¨æŠ¥æŸæŸ¥è¯¢</a></td></tr>\
+<tr><td id=damageTotal onMouseOver=overbg(damageTotal) onMouseOut=outbg(damageTotal)><a href=ifDeal.do?action=damageTotal>éƒ¨é—¨æŠ¥æŸæ±‡æ€»</a></td></tr>\
+<tr><td id=queryloan onMouseOver=overbg(queryloan) onMouseOut=outbg(queryloan)><a href=ifDeal.do?action=loanQuery>å€Ÿå‡ºæŸ¥è¯¢</a></td></tr>\
+<tr><td id=total onMouseOver=overbg(total) onMouseOut=outbg(total)><a href=ifDeal.do?action=branchTotal>éƒ¨é—¨æ±‡æ€»</a></td></tr>\
 </table>'
-var baiscmenu='<table width=70 bgcolor=yellow ><tr><td id=provider onMouseOver=overbg(provider) onMouseOut=outbg(provider)><a href=provider.do?action=providerQuery>¹©Ó¦ÉÌ¹ÜÀí</a></td></tr>\
-<tr><td id=goods onMouseOver=overbg(goods) onMouseOut=outbg(goods)><a href=goods.do?action=goodsRequest>Îï×Ê¹ÜÀí</a></td></tr>\
-<tr><td id=branch onMouseOver=overbg(branch) onMouseOut=outbg(branch)><a href=branch.do?action=branchQuery>²¿ÃÅ¹ÜÀí</a></td></tr>\
+var baiscmenu='<table width=70 bgcolor=yellow ><tr><td id=provider onMouseOver=overbg(provider) onMouseOut=outbg(provider)><a href=provider.do?action=providerQuery>ä¾›åº”å•†ç®¡ç†</a></td></tr>\
+<tr><td id=goods onMouseOver=overbg(goods) onMouseOut=outbg(goods)><a href=goods.do?action=goodsRequest>ç‰©èµ„ç®¡ç†</a></td></tr>\
+<tr><td id=branch onMouseOver=overbg(branch) onMouseOut=outbg(branch)><a href=branch.do?action=branchQuery>éƒ¨é—¨ç®¡ç†</a></td></tr>\
 </table>'
-var sysmenu='<table width=70 bgcolor=yellow ><tr><td id=user onMouseOver=overbg(user) onMouseOut=outbg(user)><a href=user.do?action=userQuery>ÓÃ»§¹ÜÀí</a></td></tr>\
-<tr><td id=initialize onMouseOver=overbg(initialize) onMouseOut=outbg(initialize)><a href=initialize.jsp>ÏµÍ³³õÊ¼»¯</a></td></tr>\
+var sysmenu='<table width=70 bgcolor=yellow ><tr><td id=user onMouseOver=overbg(user) onMouseOut=outbg(user)><a href=user.do?action=userQuery>ç”¨æˆ·ç®¡ç†</a></td></tr>\
+<tr><td id=initialize onMouseOver=overbg(initialize) onMouseOut=outbg(initialize)><a href=initialize.jsp>ç³»ç»Ÿåˆå§‹åŒ–</a></td></tr>\
 </table>'

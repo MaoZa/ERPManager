@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.actionForm.GoodsForm" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -20,7 +20,7 @@
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">µ±Ç°Î»ÖÃ£º»ù´¡ÐÅÏ¢ &gt; Îï×Ê¹ÜÀí &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">å½“å‰ä½ç½®ï¼šåŸºç¡€ä¿¡æ¯ &gt; ç‰©èµ„ç®¡ç† &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -29,7 +29,7 @@
         <td align="center" valign="top">&nbsp;
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td align="right"><a href="goodsAdd.jsp">Ìí¼ÓÎï×ÊÐÅÏ¢</a></td>
+            <td align="right"><a href="goodsAdd.jsp">æ·»åŠ ç‰©èµ„ä¿¡æ¯</a></td>
           </tr>
         </table>
 <%
@@ -37,18 +37,18 @@ List list=(List)request.getAttribute("goodslist0");
 	if(list.size()<=0){%>
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  height="40" align="center" >ÔÝÎÞÎï×ÊÐÅÏ¢!</td>
+            <td  height="40" align="center" >æš‚æ— ç‰©èµ„ä¿¡æ¯!</td>
           </tr>
 		  </table>
 		<%}else{%>
         <table width="96%" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#DDDDDA">
           <tr>
-            <td width="24%" align="center" bgcolor="#D7F6FB">ÎïÆ·Ãû³Æ</td>
-            <td width="21%" align="center" bgcolor="#D7F6FB">¹æ¸ñ</td>
-            <td width="31%" align="center" bgcolor="#D7F6FB">¹©Ó¦ÉÌ</td>
-            <td width="14%" align="center" bgcolor="#D7F6FB">µ¥¼Û</td>
-            <td width="5%" align="center" bgcolor="#D7F6FB">ÐÞ¸Ä</td>
-            <td width="5%" align="center" bgcolor="#D7F6FB">É¾³ý</td>
+            <td width="24%" align="center" bgcolor="#D7F6FB">ç‰©å“åç§°</td>
+            <td width="21%" align="center" bgcolor="#D7F6FB">è§„æ ¼</td>
+            <td width="31%" align="center" bgcolor="#D7F6FB">ä¾›åº”å•†</td>
+            <td width="14%" align="center" bgcolor="#D7F6FB">å•ä»·</td>
+            <td width="5%" align="center" bgcolor="#D7F6FB">ä¿®æ”¹</td>
+            <td width="5%" align="center" bgcolor="#D7F6FB">åˆ é™¤</td>
           </tr>
         <%
 Iterator it=list.iterator();
@@ -73,10 +73,10 @@ while(it.hasNext()){
             <td>&nbsp;<%=goodsname %></td>
             <td>&nbsp;<%=spec%></td>
             <td>&nbsp;<%=producer%></td>
-            <td>&nbsp;<%=price%>(Ôª)/<%=unit %></td>
-            <td>&nbsp;<a href="goods.do?action=goodsMquery&id=<%=id%>">ÐÞ¸Ä</a></td>
+            <td>&nbsp;<%=price%>(å…ƒ)/<%=unit %></td>
+            <td>&nbsp;<a href="goods.do?action=goodsMquery&id=<%=id%>">ä¿®æ”¹</a></td>
             <td align="center">
-            <a href="goods.do?action=goodsdel&id=<%=id%>&val=1">É¾³ý</a>
+            <a href="goods.do?action=goodsdel&id=<%=id%>&val=1">åˆ é™¤</a>
             </td>
           </tr>
 		  <%}%>
@@ -84,12 +84,12 @@ while(it.hasNext()){
         </table>
 		        <table width="96%" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#DDDDDA">
           <tr>
-            <td width="24%" align="center" bgcolor="#D7F6FB">Îï×ÊÃû³Æ</td>
-            <td width="21%" align="center" bgcolor="#D7F6FB">¹æ¸ñ</td>
-            <td width="31%" align="center" bgcolor="#D7F6FB">¹©Ó¦ÉÌ</td>
-            <td width="14%" align="center" bgcolor="#D7F6FB">µ¥¼Û</td>
-            <td width="5%" align="center" bgcolor="#D7F6FB">ÐÞ¸Ä</td>
-            <td width="5%" align="center" bgcolor="#D7F6FB">»Ö¸´</td>
+            <td width="24%" align="center" bgcolor="#D7F6FB">ç‰©èµ„åç§°</td>
+            <td width="21%" align="center" bgcolor="#D7F6FB">è§„æ ¼</td>
+            <td width="31%" align="center" bgcolor="#D7F6FB">ä¾›åº”å•†</td>
+            <td width="14%" align="center" bgcolor="#D7F6FB">å•ä»·</td>
+            <td width="5%" align="center" bgcolor="#D7F6FB">ä¿®æ”¹</td>
+            <td width="5%" align="center" bgcolor="#D7F6FB">æ¢å¤</td>
           </tr>
         <%
 List list1=(List)request.getAttribute("goodslist1");
@@ -108,10 +108,10 @@ while(it1.hasNext()){
             <td>&nbsp;<%=goodsname %></td>
             <td>&nbsp;<%=spec%></td>
             <td>&nbsp;<%=producer%></td>
-            <td>&nbsp;<%=price%>(Ôª)/<%=unit %></td>
-            <td>&nbsp;<a href="goods.do?action=goodsMquery&id=<%=id%>">ÐÞ¸Ä</a></td>
+            <td>&nbsp;<%=price%>(å…ƒ)/<%=unit %></td>
+            <td>&nbsp;<a href="goods.do?action=goodsMquery&id=<%=id%>">ä¿®æ”¹</a></td>
             <td align="center">
-             <a href="goods.do?action=goodsdel&id=<%=id%>&val=0">»Ö¸´</a>
+             <a href="goods.do?action=goodsdel&id=<%=id%>&val=0">æ¢å¤</a>
             </td>
           </tr>
 		  <%}%>

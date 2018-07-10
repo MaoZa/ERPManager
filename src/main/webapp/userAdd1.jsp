@@ -1,25 +1,25 @@
-<%@ page contentType="text/html; charset=gb2312" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <script language="javascript">
 function check(form){
 	if(form.name.value==""){
-		alert("ÇëÊäÈëÓÃ»§Ãû³Æ!");form.name.focus();return false;
+		alert("è¯·è¾“å…¥ç”¨æˆ·åç§°!");form.name.focus();return false;
 	}
 	if(form.pwd.value==""){
-		alert("ÇëÊäÈëÓÃ»§ÃÜÂë!");form.pwd.focus();return false;
+		alert("è¯·è¾“å…¥ç”¨æˆ·å¯†ç !");form.pwd.focus();return false;
 	}
 	if(form.pwd1.value==""){
-		alert("ÇëÈ·ÈÏÓÃ»§ÃÜÂë!");form.pwd1.focus();return false;
+		alert("è¯·ç¡®è®¤ç”¨æˆ·å¯†ç !");form.pwd1.focus();return false;
 	}
 	if(form.pwd.value!=form.pwd.value){
-		alert("ÄúÁ½´ÎÊäÈëµÄÓÃ»§ÃÜÂë²»Ò»ÖÂ£¬ÇëÖØĞÂÊäÈë!");form.pwd.focus();return false;
+		alert("æ‚¨ä¸¤æ¬¡è¾“å…¥çš„ç”¨æˆ·å¯†ç ä¸ä¸€è‡´ï¼Œè¯·é‡æ–°è¾“å…¥!");form.pwd.focus();return false;
 	}
 	form.submit();
 }
 </script>
 <html>
 <head>
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 <body onLoad="clockon(bgclock)">
@@ -33,7 +33,7 @@ function check(form){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">µ±Ç°Î»ÖÃ£ºÏµÍ³¹ÜÀí &gt; ÓÃ»§¹ÜÀí &gt; Ìí¼ÓÓÃ»§ &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">å½“å‰ä½ç½®ï¼šç³»ç»Ÿç®¡ç† &gt; ç”¨æˆ·ç®¡ç† &gt; æ·»åŠ ç”¨æˆ· &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -43,25 +43,25 @@ function check(form){
 		<form name="form1" method="post" action="user.do?action=useradd" onSubmit="return check(form1)">
         <table width="96%" height="160" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
-            <td width="31%" align="center">ÓÃ»§Ãû³Æ£º</td>
+            <td width="31%" align="center">ç”¨æˆ·åç§°ï¼š</td>
             <td width="69%" align="left"><input name="name" type="text" id="name" size="30"></td>
             </tr>
          <tr>
-            <td align="center">ÃÜ&nbsp;&nbsp;&nbsp;&nbsp;Âë£º</td>
+            <td align="center">å¯†&nbsp;&nbsp;&nbsp;&nbsp;ç ï¼š</td>
             <td align="left"><input name="pwd" type="password" id="pwd" size="30"></td>
             </tr>
          <tr>
-           <td align="center">È·ÈÏÃÜÂë£º</td>
+           <td align="center">ç¡®è®¤å¯†ç ï¼š</td>
            <td align="left"><input name="pwd1" type="password" id="pwd1" size="30"></td>
          </tr>
          <tr>
            <td>&nbsp;</td>
            <td>
-             <input name="Submit" type="submit" class="btn_grey" value="±£´æ">
+             <input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜">
 &nbsp;
-<input name="Submit2" type="reset" class="btn_grey" value="ÖØÖÃ">
+<input name="Submit2" type="reset" class="btn_grey" value="é‡ç½®">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="·µ»Ø" onClick="window.location.href='user.do?action=userQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="è¿”å›" onClick="window.location.href='user.do?action=userQuery'"></td>
          </tr>
         </table>
 		</form>

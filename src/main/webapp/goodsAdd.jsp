@@ -1,30 +1,30 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <script language="javascript">
 function mycheck(form1){
 	if(form1.name.value==""){
-		alert("ÇëÌîĞ´ÎïÆ·Ãû³Æ!");form1.name.focus();return false;
+		alert("è¯·å¡«å†™ç‰©å“åç§°!");form1.name.focus();return false;
 	}
 	if(form1.spec.value==""){
-		alert("ÇëÌîĞ´ÎïÆ·¹æ¸ñ!");form1.spec.focus();return false;
+		alert("è¯·å¡«å†™ç‰©å“è§„æ ¼!");form1.spec.focus();return false;
 	}
 	if(form1.unit.value==""){
-		alert("ÇëÌîĞ´µ¥Î»ĞÅÏ¢!");form1.unit.focus();return false;
+		alert("è¯·å¡«å†™å•ä½ä¿¡æ¯!");form1.unit.focus();return false;
 	}
 	if(form1.price.value==""){
-		alert("ÇëÌîĞ´ÎïÆ·µ¥¼Û!");form1.price.focus();return false;
+		alert("è¯·å¡«å†™ç‰©å“å•ä»·!");form1.price.focus();return false;
 	}
 	if(isNaN(form1.price.value)){
-		alert("ÄúÊäÈëµÄµ¥¼ÛĞÅÏ¢´íÎó£¬ÇëÖØĞÂÊäÈë!");form1.price.focus();return false;
+		alert("æ‚¨è¾“å…¥çš„å•ä»·ä¿¡æ¯é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥!");form1.price.focus();return false;
 	}
 	if(form1.producer.value==""){
-		alert("ÇëÌîĞ´Éú²ú³§¼Ò!");form1.producer.focus();return false;
+		alert("è¯·å¡«å†™ç”Ÿäº§å‚å®¶!");form1.producer.focus();return false;
 	}	
 }
 </script>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -39,7 +39,7 @@ function mycheck(form1){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">µ±Ç°Î»ÖÃ£º»ù´¡ĞÅÏ¢ &gt; Îï×Ê¹ÜÀí &gt; Ìí¼ÓÎï×ÊĞÅÏ¢ &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">å½“å‰ä½ç½®ï¼šåŸºç¡€ä¿¡æ¯ &gt; ç‰©èµ„ç®¡ç† &gt; æ·»åŠ ç‰©èµ„ä¿¡æ¯ &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -49,24 +49,24 @@ function mycheck(form1){
 		<form name="form1" method="post" action="goods.do?action=goodsadd" onSubmit="return mycheck(form1)">
         <table width="96%" height="203" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
-            <td width="31%" align="center">Îï×ÊÃû³Æ£º</td>
+            <td width="31%" align="center">ç‰©èµ„åç§°ï¼š</td>
             <td width="69%" align="left"><input name="name" type="text" id="name" size="60"></td>
             </tr>
          <tr>
-            <td align="center">¹æ&nbsp;&nbsp;&nbsp;&nbsp;¸ñ£º</td>
+            <td align="center">è§„&nbsp;&nbsp;&nbsp;&nbsp;æ ¼ï¼š</td>
             <td align="left"><input name="spec" type="text" id="spec" size="50"></td>
             </tr>
          <tr>
-           <td align="center">µ¥&nbsp;&nbsp;&nbsp;&nbsp;Î»£º</td>
+           <td align="center">å•&nbsp;&nbsp;&nbsp;&nbsp;ä½ï¼š</td>
            <td align="left"><input name="unit" type="text" id="unit"></td>
          </tr>
          <tr>
-           <td align="center">µ¥&nbsp;&nbsp;&nbsp;&nbsp;¼Û£º</td>
+           <td align="center">å•&nbsp;&nbsp;&nbsp;&nbsp;ä»·ï¼š</td>
            <td align="left"><input name="price" type="text" id="price">
-             (Ôª)</td>
+             (å…ƒ)</td>
          </tr>
          <tr>
-           <td align="center">Éú²ú³§¼Ò£º</td>
+           <td align="center">ç”Ÿäº§å‚å®¶ï¼š</td>
            <td align="left">
              <input name="producer" type="text" id="producer" size="50">
              <input name="ifdel" type="hidden" id="ifdel" value="0"></td>
@@ -74,11 +74,11 @@ function mycheck(form1){
          <tr>
            <td>&nbsp;</td>
            <td>
-             <input name="Submit" type="submit" class="btn_grey" value="±£´æ">
+             <input name="Submit" type="submit" class="btn_grey" value="ä¿å­˜">
 &nbsp;
-<input name="Submit2" type="reset" class="btn_grey" value="ÖØÖÃ">
+<input name="Submit2" type="reset" class="btn_grey" value="é‡ç½®">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="·µ»Ø" onClick="window.location.href='goods.do?action=goodsRequest'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="è¿”å›" onClick="window.location.href='goods.do?action=goodsRequest'"></td>
          </tr>
         </table>
 		</form>

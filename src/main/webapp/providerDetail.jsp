@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.actionForm.ProviderForm" %>
 <%@ page import="com.dao.ProviderDAO" %>
 <%
@@ -7,7 +7,7 @@ ProviderForm providerForm=(ProviderForm)providerDAO.query(Integer.parseInt(reque
 if(providerForm==null){
 %>
 <script language="javascript">
-alert("ÄúµÄ²Ù×÷ÓĞÎó£¡");
+alert("æ‚¨çš„æ“ä½œæœ‰è¯¯ï¼");
 window.location.href="provider.do?action=providerQuery";
 </script>
 <%
@@ -24,8 +24,8 @@ window.location.href="provider.do?action=providerQuery";
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -40,7 +40,7 @@ window.location.href="provider.do?action=providerQuery";
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">µ±Ç°Î»ÖÃ£º»ù´¡ĞÅÏ¢ &gt; ¹©Ó¦ÉÌ¹ÜÀí &gt; ¹©Ó¦ÉÌÏêÏ¸ĞÅÏ¢ &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">å½“å‰ä½ç½®ï¼šåŸºç¡€ä¿¡æ¯ &gt; ä¾›åº”å•†ç®¡ç† &gt; ä¾›åº”å•†è¯¦ç»†ä¿¡æ¯ &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -50,37 +50,37 @@ window.location.href="provider.do?action=providerQuery";
 		<form name="form1" method="post" action="provider.do?action=providerModify" onSubmit="return mycheck(form1)">
         <table width="96%" height="310" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
-            <td width="31%" align="center">¹©Ó¦ÉÌÃû³Æ£º</td>
+            <td width="31%" align="center">ä¾›åº”å•†åç§°ï¼š</td>
             <td width="69%" align="left"><input name="id" type="hidden" id="id" value="<%=id%>"><input name="name" type="text" id="name" size="60" readonly="yes" value="<%=name%>"></td>
             </tr>
          <tr>
-            <td align="center">µØ&nbsp;&nbsp;&nbsp;&nbsp;Ö·£º</td>
+            <td align="center">åœ°&nbsp;&nbsp;&nbsp;&nbsp;å€ï¼š</td>
             <td align="left"><input name="address" type="text" id="address" size="50" value="<%=address%>"></td>
             </tr>
          <tr>
-           <td align="center">ÓÊÕş±àÂë£º</td>
+           <td align="center">é‚®æ”¿ç¼–ç ï¼š</td>
            <td align="left"><input name="postcode" type="text" id="postcode" value="<%=postcode%>"></td>
          </tr>
          <tr>
-           <td align="center">ÁªÏµµç»°£º</td>
+           <td align="center">è”ç³»ç”µè¯ï¼š</td>
            <td align="left"><input name="tel" type="text" id="tel" value="<%=tel%>"></td>
          </tr>
          <tr>
-           <td align="center">´«ÕæºÅÂë£º</td>
+           <td align="center">ä¼ çœŸå·ç ï¼š</td>
            <td align="left">
              <input name="fax" type="text" id="fax" value="<%=fax%>">
              </td>
          </tr>
          <tr>
-           <td align="center">¿ª»§ÒøĞĞ£º</td>
+           <td align="center">å¼€æˆ·é“¶è¡Œï¼š</td>
            <td align="left"><input name="bankName" type="text" id="bankName" size="50" value="<%=bankName%>"></td>
          </tr>
          <tr>
-           <td align="center">ÒøĞĞÕËºÅ£º</td>
+           <td align="center">é“¶è¡Œè´¦å·ï¼š</td>
            <td align="left"><input name="bankNo" type="text" id="bankNo" value="<%=bankNo%>"></td>
          </tr>
          <tr>
-           <td align="center">±¸&nbsp;&nbsp;&nbsp;&nbsp;×¢£º</td>
+           <td align="center">å¤‡&nbsp;&nbsp;&nbsp;&nbsp;æ³¨ï¼š</td>
            <td align="left"><input name="memo" type="text" id="memo" size="60" value="<%=memo%>">
              </td>
          </tr>
@@ -88,7 +88,7 @@ window.location.href="provider.do?action=providerQuery";
            <td>&nbsp;</td>
            <td>
             &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="·µ»Ø" onClick="window.location.href='provider.do?action=providerQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="è¿”å›" onClick="window.location.href='provider.do?action=providerQuery'"></td>
          </tr>
         </table>
 		</form>

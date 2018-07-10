@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.actionForm.UserForm" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>���ʹ���ϵͳ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>物资管理系统</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -20,7 +20,7 @@
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">��ǰλ�ã�ϵͳ���� &gt; �û����� &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">当前位置：系统管理 &gt; 用户管理 &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
@@ -29,7 +29,7 @@
         <td align="center" valign="top">&nbsp;
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td align="right"><a href="userAdd.jsp">�����û�</a></td>
+            <td align="right"><a href="userAdd.jsp">添加用户</a></td>
           </tr>
         </table>
 <%
@@ -37,26 +37,28 @@ List list=(List)request.getAttribute("userList");
 		if(list.size()<=0){%>
         <table width="96%" border="0" cellspacing="0" cellpadding="0" >
           <tr>
-            <td  height="40" align="center" >�����û���Ϣ!</td>
+            <td  height="40" align="center" >暂无用户信息!</td>
           </tr>
 		  </table>
 		<%}else{%>
         <table width="96%" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#DDDDDA" >
           <tr>
-            <td align="center" bgcolor="#D7F6FB">�û�����</td>
-            <td width="10%" align="center" bgcolor="#D7F6FB">������</td>
-            <td width="10%" align="center" bgcolor="#D7F6FB">�������</td>
-            <td width="10%" align="center" bgcolor="#D7F6FB">���ʴ���</td>
-            <td width="10%" align="center" bgcolor="#D7F6FB">��ѯͳ��</td>
-            <td width="10%" align="center" bgcolor="#D7F6FB">������Ϣ</td>
-            <td width="10%" align="center" bgcolor="#D7F6FB">ϵͳ����</td>
-            <td width="6%" align="center" bgcolor="#D7F6FB">�޸�</td>
-            <td width="6%" align="center" bgcolor="#D7F6FB">ɾ��</td>
+            <td align="center" bgcolor="#D7F6FB">用户名称</td>
+            <td align="center" bgcolor="#D7F6FB">用户类型</td>
+            <td width="10%" align="center" bgcolor="#D7F6FB">入库管理</td>
+            <td width="10%" align="center" bgcolor="#D7F6FB">出库管理</td>
+            <td width="10%" align="center" bgcolor="#D7F6FB">物资处理</td>
+            <td width="10%" align="center" bgcolor="#D7F6FB">查询统计</td>
+            <td width="10%" align="center" bgcolor="#D7F6FB">基础信息</td>
+            <td width="10%" align="center" bgcolor="#D7F6FB">系统管理</td>
+            <td width="6%" align="center" bgcolor="#D7F6FB">修改</td>
+            <td width="6%" align="center" bgcolor="#D7F6FB">删除</td>
           </tr>
         <%
 Iterator it=list.iterator();
 int id=-1;
 String name="";
+int usertype=0;
 Byte setInstorage=new Byte("0");
 Byte setOutstorage=new Byte("0");
 Byte setDeal=new Byte("0");
@@ -67,6 +69,7 @@ while(it.hasNext()){
 	UserForm userForm=(UserForm)it.next();
         id=userForm.getId();
         name=userForm.getName();
+        usertype=userForm.getUsertype();
         setInstorage=userForm.getSetInstorage();
         setOutstorage=userForm.getSetOutstorage();
         setDeal=userForm.getSetDeal();
@@ -77,6 +80,7 @@ while(it.hasNext()){
 %>
           <tr>                              
             <td>&nbsp;<%=name %></td>
+            <td align="center">&nbsp;<% if(usertype==1) out.print("管理员");else out.print("普通用户");%></td>
             <td align="center">&nbsp;
               <input name="checkbox" type="checkbox" class="noborder" value="checkbox" disabled="disabled" <%if(setInstorage.equals(new Byte("1"))){out.println("checked");}%>></td>
             <td align="center">&nbsp;
@@ -89,9 +93,9 @@ while(it.hasNext()){
               <input name="checkbox" type="checkbox" class="noborder" value="checkbox" disabled="disabled" <%if(setBasic.equals(new Byte("1"))){out.println("checked");}%>></td>
             <td align="center">&nbsp;
               <input name="checkbox" type="checkbox" class="noborder" value="checkbox" disabled="disabled" <%if(setSys.equals(new Byte("1"))){out.println("checked");}%>></td>
-            <td>&nbsp;<a href="user.do?action=userMQuery&id=<%=id%>">�޸�</a></td>
+            <td align="center">&nbsp;<%if(usertype==1) out.print("---"); else{ %><a href="user.do?action=userMQuery&id=<%=id%>">修改</a> <% } %></td>
             <td align="center">
-            <a href="user.do?action=userdel&id=<%=id%>&val=1">ɾ��</a>            </td>
+            <a href="user.do?action=userdel&id=<%=id%>&val=1">删除</a>            </td>
           </tr>
 		  <%}
 }%>

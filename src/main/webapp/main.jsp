@@ -1,13 +1,14 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
+<%@ page import="com.dao.GoodsDAO" %>
 <%@ page import="java.util.List" %>
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>物资管理系统</title>
-<link rel="stylesheet" href="/Css/style.css">
+<link rel="stylesheet" href="Css/style.css">
 </head>
-<body onLoad="clockon(bgclock)" >
+<body onLoad="clockon(bgclock)">
 <table width="1000" height="174" border="0" align="center" cellpadding="0" cellspacing="0" >
   <tr>
     <td height="133" align="center" valign="top"><%@ include file="top.jsp"%></td>
@@ -23,15 +24,15 @@
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
       <tr>
-        <td width="5" valign="top" background="/images/left.gif">&nbsp;</td>
-        <td valign="top" background="/images/main.jpg" style="background-size:100% 100%;">&nbsp;</td>
-        <td width="10" valign="top" background="/images/right.jpg">&nbsp;</td>
+        <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
+        <td valign="top" background="images/main.jpg" style="background-size:100% 100%;">&nbsp;</td>
+        <td width="10" valign="top" background="images/right.jpg">&nbsp;</td>
       </tr>
     </table>
     </td>
   </tr>
   <tr>
-    <td height="55" valign="top" background="/images/bottom.jpg" style="background-size:100% 100%;"><%@ include file="copyright.jsp"%></td>
+    <td height="55" valign="top" background="images/bottom.jpg" style="background-size:100% 100%;"><%@ include file="copyright.jsp"%></td>
   </tr>
 </table>
 </body>

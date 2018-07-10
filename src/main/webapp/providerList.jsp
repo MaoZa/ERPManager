@@ -1,11 +1,11 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.actionForm.ProviderForm" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>���ʹ���ϵͳ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>物资管理系统</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -20,7 +20,7 @@
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">��ǰλ�ã�������Ϣ &gt; ��Ӧ�̹��� &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">当前位置：基础信息 &gt; 供应商管理 &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -29,7 +29,7 @@
         <td align="center" valign="top">&nbsp;
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td align="right"><a href="providerAdd.jsp">���ӹ�Ӧ����Ϣ</a></td>
+            <td align="right"><a href="providerAdd.jsp">添加供应商信息</a></td>
           </tr>
         </table>
 <%
@@ -37,19 +37,19 @@ List list=(List)request.getAttribute("providerList");
 		if(list.size()<=0){%>
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  height="40" align="center" >���޹�Ӧ����Ϣ!</td>
+            <td  height="40" align="center" >暂无供应商信息!</td>
           </tr>
 		  </table>
 		<%}else{%>
         <table width="96%" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#DDDDDA">
           <tr>
-            <td width="24%" align="center" bgcolor="#D7F6FB">��Ӧ������</td>
-            <td width="27%" align="center" bgcolor="#D7F6FB">��ַ</td>
-            <td width="8%" align="center" bgcolor="#D7F6FB">��������</td>
-            <td width="16%" align="center" bgcolor="#D7F6FB">�绰</td>
-            <td width="14%" align="center" bgcolor="#D7F6FB">����</td>
-            <td width="5%" align="center" bgcolor="#D7F6FB">�޸�</td>
-            <td width="6%" align="center" bgcolor="#D7F6FB">ɾ��</td>
+            <td width="24%" align="center" bgcolor="#D7F6FB">供应商名称</td>
+            <td width="27%" align="center" bgcolor="#D7F6FB">地址</td>
+            <td width="8%" align="center" bgcolor="#D7F6FB">邮政编码</td>
+            <td width="16%" align="center" bgcolor="#D7F6FB">电话</td>
+            <td width="14%" align="center" bgcolor="#D7F6FB">传真</td>
+            <td width="5%" align="center" bgcolor="#D7F6FB">修改</td>
+            <td width="6%" align="center" bgcolor="#D7F6FB">删除</td>
           </tr>
         <%
 Iterator it=list.iterator();
@@ -80,9 +80,9 @@ while(it.hasNext()){
             <td>&nbsp;<%=postcode%></td>
             <td>&nbsp;<%=tel%></td>
             <td>&nbsp;<%=fax%></td>
-            <td>&nbsp;<a href="provider.do?action=providerMQuery&id=<%=id%>">�޸�</a></td>
+            <td>&nbsp;<a href="provider.do?action=providerMQuery&id=<%=id%>">修改</a></td>
             <td align="center">
-            <a href="provider.do?action=providerdel&id=<%=id%>&val=1">ɾ��</a>
+            <a href="provider.do?action=providerdel&id=<%=id%>&val=1">删除</a>
             </td>
           </tr>
 		  <%}%>

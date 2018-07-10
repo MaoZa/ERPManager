@@ -1,6 +1,6 @@
-<%@ page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=utf-8" language="java"%>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
 <title>物资管理系统</title>
 <link href="Css/style.css" rel="stylesheet">

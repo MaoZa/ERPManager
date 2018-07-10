@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page contentType="text/html; charset=utf-8" language="java"%>
 <%@page import="com.actionForm.GetUseForm"%>
 <%@page import="com.actionForm.BranchForm"%>
 <%@page import="com.actionForm.GoodsForm"%>
@@ -7,23 +7,23 @@
 <script language="javascript">
 function check(myform){
 		if(myform.sdate.value==""){
-			alert("ÇëÊäÈë¿ªÊ¼ÈÕÆÚ");myform.sdate.focus();return false;
+			alert("è¯·è¾“å…¥å¼€å§‹æ—¥æœŸ");myform.sdate.focus();return false;
 		}
 		if(CheckDate(myform.sdate.value)){
-			alert("ÄúÊäÈëµÄ¿ªÊ¼ÈÕÆÚ²»ÕıÈ·£¡\n Çë×¢ÒâÈÕÆÚ¸ñÊ½»òÈòÄê£¡");myform.sdate.focus();return false;
+			alert("æ‚¨è¾“å…¥çš„å¼€å§‹æ—¥æœŸä¸æ­£ç¡®ï¼\n è¯·æ³¨æ„æ—¥æœŸæ ¼å¼æˆ–é—°å¹´ï¼");myform.sdate.focus();return false;
 		}
 		if(myform.edate.value==""){
-			alert("ÇëÊäÈë½áÊøÈÕÆÚ");myform.edate.focus();return false;
+			alert("è¯·è¾“å…¥ç»“æŸæ—¥æœŸ");myform.edate.focus();return false;
 		}
 		if(CheckDate(myform.edate.value)){
-			alert("ÄúÊäÈëµÄ½áÊøÈÕÆÚ²»ÕıÈ·£¡\n Çë×¢ÒâÈÕÆÚ¸ñÊ½»òÈòÄê£¡");myform.edate.focus();return false;
+			alert("æ‚¨è¾“å…¥çš„ç»“æŸæ—¥æœŸä¸æ­£ç¡®ï¼\n è¯·æ³¨æ„æ—¥æœŸæ ¼å¼æˆ–é—°å¹´ï¼");myform.edate.focus();return false;
 		}
 }
 </script>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 <script src="JS/function.js"></script>
 </head>
@@ -38,9 +38,9 @@ function check(myform){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom"> µ±Ç°Î»ÖÃ£º²éÑ¯Í³¼Æ
+          <td width="70%" valign="bottom"> å½“å‰ä½ç½®ï¼šæŸ¥è¯¢ç»Ÿè®¡
             &gt;
-            ²¿ÃÅ»ã×Ü
+            éƒ¨é—¨æ±‡æ€»
             &gt;&gt;&gt; </td>
         </tr>
       </table>
@@ -56,12 +56,12 @@ function check(myform){
             <tr>
               <td align="center">&nbsp;<img src="images/search.gif" width="45" height="28"></td>
               <td><input name="flag" type="checkbox" id="flag" value="b" checked style="display:none">
-Í³¼ÆÊ±¼ä£º                ´Ó
+ç»Ÿè®¡æ—¶é—´ï¼š                ä»
   <input name="sdate" type="text" id="sdate">
-µ½
+åˆ°
 <input name="edate" type="text" id="edate">
-(ÈÕÆÚ¸ñÊ½Îª£º2006-07-05)
-<input name="Submit" type="submit" class="btn_grey" value="Í³¼Æ" onClick="return check(myform)"></td>
+(æ—¥æœŸæ ¼å¼ä¸ºï¼š2006-07-05)
+<input name="Submit" type="submit" class="btn_grey" value="ç»Ÿè®¡" onClick="return check(myform)"></td>
             </tr>
           </table>
 		</form>
@@ -72,7 +72,7 @@ if(list.size()==0){
 %>
           <table width="98%" height="30"  border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
             <tr>
-              <td height="36" align="center">Ã»ÓĞ·ûºÏÌõ¼şµÄ²¿ÃÅÁìÓÃĞÅÏ¢£¡</td>
+              <td height="36" align="center">æ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„éƒ¨é—¨é¢†ç”¨ä¿¡æ¯ï¼</td>
             </tr>
           </table>
           <%
@@ -81,9 +81,9 @@ if(list.size()==0){
 	String eDate=(String)request.getAttribute("eDate");
 	String message="";
 	if(sDate==null || sDate.equals("")){
-		message="È«²¿²¿ÃÅ»ã×ÜĞÅÏ¢";
+		message="å…¨éƒ¨éƒ¨é—¨æ±‡æ€»ä¿¡æ¯";
 	}else{
-		message="´Ó"+sDate+"µ½"+eDate+"Ö®¼äµÄ²¿ÃÅ»ã×ÜĞÅÏ¢";
+		message="ä»"+sDate+"åˆ°"+eDate+"ä¹‹é—´çš„éƒ¨é—¨æ±‡æ€»ä¿¡æ¯";
 	}
 	String goodsname="";
 	String spec="";
@@ -101,16 +101,16 @@ if(list.size()==0){
           </table>
           <table width="98%"  border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolordark="#D2E3E6" bordercolorlight="#FFFFFF">
   <tr align="center" bgcolor="#e3F4F7">
-    <td width="12%">²¿ÃÅ</td>
-    <td width="27%">Îï×ÊÃû³Æ[¹æ¸ñ]</td>
-    <td width="4%">µ¥Î»</td>
-    <td width="7%">µ¥¼Û</td>
-    <td width="8%">ÁìÓÃÊıÁ¿</td>
-    <td width="9%">ÁìÓÃ½ğ¶î</td>
-    <td width="9%">±¨ËğÊıÁ¿</td>
-    <td width="8%">±¨Ëğ½ğ¶î</td>
-    <td width="8%">ÔÚÓÃÊıÁ¿</td>
-    <td width="8%">ÔÚÓÃ½ğ¶î</td>
+    <td width="12%">éƒ¨é—¨</td>
+    <td width="27%">ç‰©èµ„åç§°[è§„æ ¼]</td>
+    <td width="4%">å•ä½</td>
+    <td width="7%">å•ä»·</td>
+    <td width="8%">é¢†ç”¨æ•°é‡</td>
+    <td width="9%">é¢†ç”¨é‡‘é¢</td>
+    <td width="9%">æŠ¥æŸæ•°é‡</td>
+    <td width="8%">æŠ¥æŸé‡‘é¢</td>
+    <td width="8%">åœ¨ç”¨æ•°é‡</td>
+    <td width="8%">åœ¨ç”¨é‡‘é¢</td>
   </tr>
 <%
 for(int i=0;i<list.size();i++){

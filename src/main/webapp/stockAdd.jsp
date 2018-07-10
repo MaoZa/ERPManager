@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page contentType="text/html; charset=utf-8" language="java"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.ProviderForm"%>
 <%@page import="com.dao.GoodsDAO"%>
@@ -9,12 +9,12 @@
 <%
 boolean flag=false;
     GetTime getTime = new GetTime();
-  //»ñÈ¡È«²¿Îï×ÊĞÅÏ¢
+  //è·å–å…¨éƒ¨ç‰©èµ„ä¿¡æ¯
     List listgoods = null;
     GoodsDAO goodsDAO = new GoodsDAO();
     listgoods = goodsDAO.query(null, 0);
    // session.setAttribute("listgoods", listgoods);
-  //»ñÈ¡È«²¿¹©Ó¦ÉÌĞÅÏ¢
+  //è·å–å…¨éƒ¨ä¾›åº”å•†ä¿¡æ¯
     List listprovider = null;
     ProviderDAO providerDAO = new ProviderDAO();
     listprovider = providerDAO.query(null);
@@ -22,10 +22,10 @@ boolean flag=false;
   //List listgoods=(List)request.getAttribute("goodsList");
  // List listprovider = (List) request.getAttribute("providerList");
   if (listgoods.size() <= 0) {
-    out.println("<script language='javascript'>alert('ÇëÏÈÂ¼ÈëÎï×ÊĞÅÏ¢');window.location.href='goods.do?action=goodsRequest';</script>");
+    out.println("<script language='javascript'>alert('è¯·å…ˆå½•å…¥ç‰©èµ„ä¿¡æ¯');window.location.href='goods.do?action=goodsRequest';</script>");
   }
   else if (listprovider.size() <= 0) {
-    out.println("<script language='javascript'>alert('ÇëÏÈÂ¼Èë¹©Ó¦ÉÌĞÅÏ¢');window.location.href='provider.do?action=providerQuery';</script>");
+    out.println("<script language='javascript'>alert('è¯·å…ˆå½•å…¥ä¾›åº”å•†ä¿¡æ¯');window.location.href='provider.do?action=providerQuery';</script>");
   }
   else {
     int goodsid = -1;
@@ -41,14 +41,14 @@ boolean flag=false;
 <script language="javascript">
 function mycheck(form){
 	if(form.principal.value==""){
-		alert("ÇëÌîĞ´¸ºÔğÈËĞÕÃû!");form.principal.focus();return false;
+		alert("è¯·å¡«å†™è´Ÿè´£äººå§“å!");form.principal.focus();return false;
 	}
 }
 </script>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>ç‰©èµ„ç®¡ç†ç³»ç»Ÿ</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 <body onLoad="clockon(bgclock)" >
@@ -62,9 +62,9 @@ function mycheck(form){
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom"> µ±Ç°Î»ÖÃ£ºÎï×ÊÈë¿â
+          <td width="70%" valign="bottom"> å½“å‰ä½ç½®ï¼šç‰©èµ„å…¥åº“
             &gt;
-            ²É¹ºµÇ¼Ç
+            é‡‡è´­ç™»è®°
             &gt;&gt;&gt; </td>
         </tr>
       </table>
@@ -75,20 +75,20 @@ function mycheck(form){
             <form name="form1" method="post" action="cart.do?action=add" onSubmit="return mycheck(form1)">
               <table width="96%" height="56" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
                 <tr>
-                  <td width="35%" align="center" bgcolor="#D7F6FB">Îï×ÊÃû³Æ[¹æ¸ñ]</td>
-                  <td width="25%" align="center" bgcolor="#D7F6FB">Éú²ú³§¼Ò</td>
-                  <td width="17%" align="center" bgcolor="#D7F6FB">µ¥¼Û</td>
-                  <td width="17%" align="center" bgcolor="#D7F6FB">ÊıÁ¿</td>
-                  <td width="6%" align="center" bgcolor="#D7F6FB">²Ù×÷</td>
+                  <td width="35%" align="center" bgcolor="#D7F6FB">ç‰©èµ„åç§°[è§„æ ¼]</td>
+                  <td width="25%" align="center" bgcolor="#D7F6FB">ç”Ÿäº§å‚å®¶</td>
+                  <td width="17%" align="center" bgcolor="#D7F6FB">å•ä»·</td>
+                  <td width="17%" align="center" bgcolor="#D7F6FB">æ•°é‡</td>
+                  <td width="6%" align="center" bgcolor="#D7F6FB">æ“ä½œ</td>
                 </tr>
                 <tr>
                   <script language="javascript">
 				  function checkStock(myform){
 				  	if(myform.price.value<=0){
-						alert("ÇëÊäÈëµ¥¼Û!");myform.price.focus();return;
+						alert("è¯·è¾“å…¥å•ä»·!");myform.price.focus();return;
 					}
 				  	if(myform.number.value<=0){
-						alert("ÇëÊäÈëÊıÁ¿!");myform.number.focus();return;
+						alert("è¯·è¾“å…¥æ•°é‡!");myform.number.focus();return;
 					}
 					myform.submit();
 				  }
@@ -117,10 +117,10 @@ function mycheck(form){
                   </td>
                   <td align="left"style="padding-left:10px"><%=selProducer%> </td>
                   <td align="center"><input name="price" type="text" id="price" size="10" value="<%=selPrice%>">
-                  Ôª </td>
+                  å…ƒ </td>
                   <td align="center"><input name="number" type="text" id="number" value="0" size="8">
                   <%=selUnit%></td>
-                  <td align="center"><a href="#" onClick="checkStock(form1)">²É¹º</a> </td>
+                  <td align="center"><a href="#" onClick="checkStock(form1)">é‡‡è´­</a> </td>
                 </tr>
 				<%if(session.getAttribute("stockgoods")!=null ){
 					flag=true;
@@ -134,7 +134,7 @@ function mycheck(form){
 					for(int i=0;i<sessionList.size();i++){
 						StockGoodsForm stockgoodsF=(StockGoodsForm)sessionList.get(i);
 						sesId=stockgoodsF.getId();
-                                                //**********»ñÈ¡Îï×Ê»ù±¾ĞÅÏ¢
+                                                //**********è·å–ç‰©èµ„åŸºæœ¬ä¿¡æ¯
 						GoodsForm goods=(GoodsForm)goodsDAO.query(sesId);
                                                 sesName=goods.getName();
                                                 sesProducer=goods.getProducer();
@@ -142,14 +142,14 @@ function mycheck(form){
                                                 //******************
 						sesPrice=stockgoodsF.getPrice();
 						sesNumber=stockgoodsF.getNumber();
-                                                amount=amount+sesPrice*sesNumber; //¼ÆËãºÏ¼Æ½ğ¶î
+                                                amount=amount+sesPrice*sesNumber; //è®¡ç®—åˆè®¡é‡‘é¢
 				%>
 				<tr>
                   <td width="35%" align="left" style="padding-left:10px"><%=sesName%></td>
                   <td width="25%" align="left" style="padding-left:10px"><%=sesProducer%></td>
-                  <td width="17%" align="left" style="padding-left:15px"><%=sesPrice%>Ôª</td>
+                  <td width="17%" align="left" style="padding-left:15px"><%=sesPrice%>å…ƒ</td>
                   <td width="17%" align="left" style="padding-left:20px"><%=sesNumber%>&nbsp;[<%=sesunit%>]</td>
-                  <td width="6%" align="center"><a href="cart.do?action=remove&removeid=<%=i%>">ÒÆÈ¥</a></td>
+                  <td width="6%" align="center"><a href="cart.do?action=remove&removeid=<%=i%>">ç§»å»</a></td>
                 </tr>
 				<%
 					}
@@ -164,7 +164,7 @@ function mycheck(form){
               </table>
               <table width="96%" height="76" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF" class="tableBorder">
                 <tr>
-                  <td width="14%" height="38" align="center">¹©Ó¦ÉÌÃû³Æ£º</td>
+                  <td width="14%" height="38" align="center">ä¾›åº”å•†åç§°ï¼š</td>
                   <td colspan="3" align="left"><select name="providerid" id="providerid">
                       <%
                     Iterator itprovider = listprovider.iterator();
@@ -176,16 +176,16 @@ function mycheck(form){
                       <option value="<%=providerid%>"><%=providername %> </option>
                       <%}                  %>
                     </select>                  </td>
-                  <td width="10%" align="left">ºÏ¼Æ½ğ¶î£º</td>
+                  <td width="10%" align="left">åˆè®¡é‡‘é¢ï¼š</td>
                   <td width="26%" align="left"><input name="totalpay" type="text" id="totalpay"  size="20" value="<%=amount%>" readonly="yes" >
-                    Ôª </td>
+                    å…ƒ </td>
                 </tr>
                 <tr>
-                  <td height="38" align="center"> ¸º&nbsp;&nbsp;Ôğ&nbsp;&nbsp;ÈË£º</td>
+                  <td height="38" align="center"> è´Ÿ&nbsp;&nbsp;è´£&nbsp;&nbsp;äººï¼š</td>
                   <td width="35%" align="left"><input name="principal" type="text" id="principal" size="20">                  </td>
                   <td width="8%" align="left">&nbsp;</td>
                   <td width="7%" align="left">&nbsp;</td>
-                  <td align="left">²Ù&nbsp;×÷&nbsp;Ô±£º</td>
+                  <td align="left">æ“&nbsp;ä½œ&nbsp;å‘˜ï¼š</td>
                   <td align="left"><input name="username" type="text" id="username" value="<%=session.getAttribute("username")%>" size="20" readonly="yes"></td>
                 </tr>
               </table>
@@ -193,9 +193,9 @@ function mycheck(form){
                 <tr>
                   <td align="center">
 				  <%if(flag){%>
-				  <input name="Submit4" type="submit" class="btn_grey" value="±£´æ">
+				  <input name="Submit4" type="submit" class="btn_grey" value="ä¿å­˜">
                     &nbsp;
-                    <input name="Submit22" type="button" class="btn_grey" value="ÖØÖÃ" onClick="window.location.href='cart.do?action=clear';"><%}%>
+                    <input name="Submit22" type="button" class="btn_grey" value="é‡ç½®" onClick="window.location.href='cart.do?action=clear';"><%}%>
                     &nbsp;</td>
                 </tr>
               </table>

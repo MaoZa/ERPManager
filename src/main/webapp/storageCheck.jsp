@@ -1,18 +1,18 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page contentType="text/html; charset=utf-8" language="java"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.StorageForm"%>
 <%@page import="com.dao.OutStorageDAO"%>
 <%@page import="java.util.*"%>
 <%
-  //»ñÈ¡È«²¿Îï×ÊÐÅÏ¢
+  //èŽ·å–å…¨éƒ¨ç‰©èµ„ä¿¡æ¯
     List listgoods = null;
     OutStorageDAO outStorageDAO = new OutStorageDAO();
-    listgoods = outStorageDAO.storage_query();     //²éÑ¯¿â´æÎï×Ê
+    listgoods = outStorageDAO.storage_query();     //æŸ¥è¯¢åº“å­˜ç‰©èµ„
 	java.util.Date date=new java.util.Date();
 %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" href="Css/style.css">
 <title></title>
 <style>
@@ -38,8 +38,8 @@ div{display:none}
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom"> µ±Ç°Î»ÖÃ£ºÎï×Ê´¦Àí
-            &gt; ¿â´æÅÌµã
+          <td width="70%" valign="bottom"> å½“å‰ä½ç½®ï¼šç‰©èµ„å¤„ç†
+            &gt; åº“å­˜ç›˜ç‚¹
             &gt;&gt;&gt; </td>
         </tr>
       </table>
@@ -52,10 +52,10 @@ div{display:none}
                 <td width="50" class="noprint" >&nbsp;</td>
                 <td valign="top"><table width="90%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td height="27" align="center" style=" font-size:14px;"><b>¿â´æÅÌµã±í</b></td>
+                    <td height="27" align="center" style=" font-size:14px;"><b>åº“å­˜ç›˜ç‚¹è¡¨</b></td>
                   </tr>
                   <tr>
-                    <td height="13" align="right">´òÓ¡ÈÕÆÚ£º<%=new java.sql.Date(date.getTime())%></td>
+                    <td height="13" align="right">æ‰“å°æ—¥æœŸï¼š<%=new java.sql.Date(date.getTime())%></td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
@@ -64,29 +64,29 @@ div{display:none}
                   <table width="90%" border="1" cellpadding="0" cellspacing="0" bgcolor="#000000" id="pay" bordercolor="#00000" bordercolordark="#000000" bordercolorlight="#FFFFFF" >
 				  <thead style="display:table-header-group;">
                     <tr>
-                      <td width="7%" align="center" bgcolor="#FFFFFF">±àºÅ</td>
-                      <td width="21%" align="center" bgcolor="#FFFFFF">Îï×ÊÃû³Æ</td>
-                      <td width="16%" align="center" bgcolor="#FFFFFF">¹æ¸ñ</td>
-                      <td width="23%" align="center" bgcolor="#FFFFFF">Éú²ú³§¼Ò</td>
-                      <td width="9%" align="center" bgcolor="#FFFFFF">µ¥¼Û(Ôª)</td>
-                      <td width="15%" align="center" bgcolor="#FFFFFF">¿â´æÊýÁ¿(µ¥Î»)</td>
-                      <td width="9%" align="center" bgcolor="#FFFFFF">ÅÌµãÊýÁ¿</td>
+                      <td width="7%" align="center" bgcolor="#FFFFFF">ç¼–å·</td>
+                      <td width="21%" align="center" bgcolor="#FFFFFF">ç‰©èµ„åç§°</td>
+                      <td width="16%" align="center" bgcolor="#FFFFFF">è§„æ ¼</td>
+                      <td width="23%" align="center" bgcolor="#FFFFFF">ç”Ÿäº§åŽ‚å®¶</td>
+                      <td width="9%" align="center" bgcolor="#FFFFFF">å•ä»·(å…ƒ)</td>
+                      <td width="15%" align="center" bgcolor="#FFFFFF">åº“å­˜æ•°é‡(å•ä½)</td>
+                      <td width="9%" align="center" bgcolor="#FFFFFF">ç›˜ç‚¹æ•°é‡</td>
                     </tr>
 					</thead>
                     <%
   if (listgoods.size() <= 0) {%>
                     <tr>
-                      <td colspan="7" align="center" bgcolor="#FFFFFF">&nbsp;ÔÝÎÞ¿â´æÐÅÏ¢!</td>
+                      <td colspan="7" align="center" bgcolor="#FFFFFF">&nbsp;æš‚æ— åº“å­˜ä¿¡æ¯!</td>
                     </tr>
                     <%  }else {
-	  String Producer="";     //Éú²ú³§¼Ò
-	  String Unit="";     //µ¥Î»
-	  float Price=0.0f;     //µ¥¼Û
+	  String Producer="";     //ç”Ÿäº§åŽ‚å®¶
+	  String Unit="";     //å•ä½
+	  float Price=0.0f;     //å•ä»·
 	  float amount=0.0f;
-	  int storagenumber=0;     //¿â´æÊýÁ¿
-	  String goodsname="";     //Îï×ÊÃû³Æ
-	  int goodsId=0;     //Îï×ÊID
-	  String spec="";     //¹æ¸ñ
+	  int storagenumber=0;     //åº“å­˜æ•°é‡
+	  String goodsname="";     //ç‰©èµ„åç§°
+	  int goodsId=0;     //ç‰©èµ„ID
+	  String spec="";     //è§„æ ¼
                   for(int i=0;i<listgoods.size();i++){
       
                     Object obj[]=(Object[])listgoods.get(i);
@@ -118,7 +118,7 @@ div{display:none}
                       <td height="18">&nbsp;</td>
                     </tr>
                     <tr>
-                      <td height="25" align="right"><div>¿â´æ×Ü½ð¶î£º<%=amount%>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onClick="window.print();">´òÓ¡ÅÌµã±¨±í</a></div></td>
+                      <td height="25" align="right"><div>åº“å­˜æ€»é‡‘é¢ï¼š<%=amount%>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onClick="window.print();">æ‰“å°ç›˜ç‚¹æŠ¥è¡¨</a></div></td>
                     </tr>
 					<%}%>
                   </table></td>
