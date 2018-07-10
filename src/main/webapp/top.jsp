@@ -1,79 +1,53 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" import="java.sql.*" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@page import="com.hxzy.pojo.Tb_user"%>
 <%@ page import="java.util.List" %>
-<%@ page import="com.actionForm.UserForm"%>
-<%@ page import="com.dao.UserDAO"%>
 <%
-if(session.getAttribute("username")==null || session.getAttribute("username")==""){
-	response.sendRedirect("login.jsp");
-}
-UserDAO userDAO=new UserDAO();
-String str="name='"+session.getAttribute("username")+"'";//  song     name='song'     
-List list_user=userDAO.query(str);
-    int user_id=0;
-    String user_name="";
-    String user_pwd="";
-    Byte user_setInstorage = new Byte("0");
-    Byte user_setOutstorage= new Byte("0");
-    Byte user_setDeal= new Byte("0");
-    Byte user_setQuery= new Byte("0");
-    Byte user_setBasic= new Byte("0");
-    Byte user_setSys= new Byte("0");
-   
-if(list_user.size()>0){
-    UserForm user_userForm=(UserForm)list_user.get(0);
-    user_id=user_userForm.getId();
-    user_name=user_userForm.getName();
-    user_pwd=user_userForm.getPwd();
-    user_setInstorage = user_userForm.getSetInstorage();
-    user_setOutstorage= user_userForm.getSetOutstorage();
-    user_setDeal=  user_userForm.getSetDeal();
-    user_setQuery= user_userForm.getSetQuery();
-    user_setBasic=  user_userForm.getSetBasic();
-    user_setSys=  user_userForm.getSetSys();
-}
+	Tb_user user = (Tb_user)request.getAttribute("user");
+
 %>
+<%=user.getSetinstorage() %>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<link href="Css/style.css" rel="stylesheet" />
-<script src="JS/onclock.JS"></script>
-<script src="JS/menu.JS"></script>
+<link href="/Css/style.css" rel="stylesheet" />
+<script src="/JS/onclock.JS"></script>
+<script src="/JS/menu.JS"></script>
 <div class=menuskin id=popmenu
       onmouseover="clearhidemenu();highlightmenu(event,'on')"
       onmouseout="highlightmenu(event,'off');dynamichide(event)" style="Z-index:100;position:absolute;"></div>
-<table width="1000" height="133" border="0" align="center" cellpadding="0" cellspacing="0" background="images/topbg.jpg" style="background-size:100% 100%;">
+<table width="1000" height="133" border="0" align="center" cellpadding="0" cellspacing="0" background="/images/topbg.jpg" style="background-size:100% 100%;">
   <tr>
     <td valign="top"><table width="99%" height="131" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td width="24%" height="109">&nbsp;</td>
         <td colspan="2">&nbsp;</td>
-        <td width="17%"><a href="quit.jsp">¡¤ ¹Ø±ÕÏµÍ³</a>          <br>
-          <a href="#" onClick="quit()">¡¤ ÖØÐÂµÇÂ¼</a><br>
+        <td width="17%"><a href="quit.jsp">ãƒ» å…³é—­ç³»ç»Ÿ</a>          <br>
+          <a href="#" onClick="quit()">ãƒ» é‡æ–°ç™»å½•</a><br>
 <script language="javascript">
 	function quit(){
-		if(confirm("ÕæµÄÒªÖØÐÂµÇÂ¼Âð?")){
-			window.location.href="logout.jsp";
+		if(confirm("çœŸçš„è¦é‡æ–°ç™»å½•å—?")){
+			window.location.href="/logout.jsp";
 		}
 	}
 </script>
-          <a href="pwsModify.jsp" >¡¤ ÐÞ¸ÄÃÜÂë</a> </td>
+          <a href="pwsModify.jsp" >ãƒ» ä¿®æ”¹å¯†ç </a> </td>
       </tr>
       <tr>
      
-        <td align="center" class="word_Green">µ± Ç° µÇ Â¼ ÓÃ »§ £º<%=session.getAttribute("username")%></td>
+        <td align="center" class="word_Green">å½“ å‰ ç™» å½• ç”¨ æˆ· ï¼š<%=session.getAttribute("username")%></td>
         <td width="10%">&nbsp;</td>
         <td colspan="2"><table width="100%" height="19" border="0" cellpadding="0" cellspacing="0">
           <tr>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
-            <td width="12%" style="color:#929291"><%if(user_setInstorage.equals(new Byte("1"))){%><a  onmouseover=showmenu(event,instoragemenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">Îï×ÊÈë¿â</a><%}else{%>Îï×ÊÈë¿â<%}%></td>
+            <td width="12%" style="color:#929291"><%if(user.getSetinstorage()){%><a onmouseover=showmenu(event,instoragemenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">ç‰©èµ„å…¥åº“</a><%}else{%>ç‰©èµ„å…¥åº“<%}%></td>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
-            <td width="12%" style="color:#929291"><%if(user_setOutstorage.equals(new Byte("1"))){%><a  onmouseover=showmenu(event,outstoragemenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">Îï×Ê³ö¿â</a><%}else{%>Îï×Ê³ö¿â<%}%></td>
+            <td width="12%" style="color:#929291"><%if(user.getSetoutstorage()){%><a onmouseover=showmenu(event,outstoragemenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">ç‰©èµ„å‡ºåº“</a><%}else{%>ç‰©èµ„å‡ºåº“<%}%></td>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
-            <td width="12%" style="color:#929291"><%if(user_setDeal.equals(new Byte("1"))){%><a  onmouseover=showmenu(event,dealmenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">Îï×Ê´¦Àí</a><%}else{%>Îï×Ê´¦Àí<%}%></td>
+            <td width="12%" style="color:#929291"><%if(user.getSetdeal()){%><a onmouseover=showmenu(event,dealmenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">ç‰©èµ„å¤„ç†</a><%}else{%>ç‰©èµ„å¤„ç†<%}%></td>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
-            <td width="12%" style="color:#929291"><%if(user_setQuery.equals(new Byte("1"))){%><a  onmouseover=showmenu(event,querymenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">²éÑ¯Í³¼Æ</a><%}else{%>²éÑ¯Í³¼Æ<%}%></td>
+            <td width="12%" style="color:#929291"><%if(user.getSetquery()){%><a onmouseover=showmenu(event,querymenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">æŸ¥è¯¢ç»Ÿè®¡</a><%}else{%>æŸ¥è¯¢ç»Ÿè®¡<%}%></td>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
-            <td width="12%" style="color:#929291"><%if(user_setBasic.equals(new Byte("1"))){%><a  onmouseover=showmenu(event,baiscmenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">»ù´¡ÐÅÏ¢</a><%}else{%>»ù´¡ÐÅÏ¢<%}%></td>
+            <td width="12%" style="color:#929291"><%if(user.getSetbasic()){%><a onmouseover=showmenu(event,baiscmenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">åŸºç¡€ä¿¡æ¯</a><%}else{%>åŸºç¡€ä¿¡æ¯<%}%></td>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
-            <td width="12%" style="color:#929291"><%if(user_setSys.equals(new Byte("1"))){%><a  onmouseover=showmenu(event,sysmenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">ÏµÍ³¹ÜÀí</a><%}else{%>ÏµÍ³¹ÜÀí<%}%></td>
+            <td width="12%" style="color:#929291"><%if(user.getSetsys()){%><a onmouseover=showmenu(event,sysmenu) onmouseout=delayhidemenu() class='word_white' style="CURSOR:hand">ç³»ç»Ÿç®¡ç†</a><%}else{%>ç³»ç»Ÿç®¡ç†<%}%></td>
             <td width="4%"><img src="images/compart.gif" width="5" height="22"></td>
           </tr>
         </table></td>

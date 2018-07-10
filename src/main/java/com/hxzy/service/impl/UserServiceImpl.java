@@ -17,10 +17,10 @@ public class UserServiceImpl implements UserSerivce {
 	@Autowired
 	private Tb_userMapper tb_userMapper;
 	
-	public int loginCheck(String username, String password) {
+	public Tb_user loginCheck(String username, String password) {
 		Tb_userExample example = new Tb_userExample();
 		example.createCriteria().andNameEqualTo(username).andPwdEqualTo(password);
-		return tb_userMapper.selectByExample(example).size();
+		return tb_userMapper.selectByExample(example).get(0);
 	}
 
 	public List<Tb_user> queryUser() {

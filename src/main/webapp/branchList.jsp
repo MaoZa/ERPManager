@@ -1,11 +1,10 @@
-<%@ page contentType="text/html; charset=gb2312" language="java" %>
-<%@ page import="com.actionForm.BranchForm" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>物资管理系统</title>
+<title>鐗╄祫绠＄悊绯荤粺</title>
 <link rel="stylesheet" href="Css/style.css">
 </head>
 
@@ -20,7 +19,7 @@
         <tr>
           <td width="26%" align="right"><div id="bgclock" class="word_white"></div></td>
           <td width="4%">&nbsp;</td>
-          <td width="70%" valign="bottom">当前位置：基础信息 &gt; 部门管理 &gt;&gt;&gt;</td>
+          <td width="70%" valign="bottom">褰撳墠浣嶇疆锛氬熀纭�淇℃伅 &gt; 閮ㄩ棬绠＄悊 &gt;&gt;&gt;</td>
         </tr>
       </table>
 <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
@@ -29,7 +28,7 @@
         <td align="center" valign="top">&nbsp;
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td align="right"><a href="branchAdd.jsp">添加部门信息</a></td>
+            <td align="right"><a href="branchAdd.jsp">娣诲姞閮ㄩ棬淇℃伅</a></td>
           </tr>
         </table>
 <%
@@ -37,16 +36,16 @@ List list=(List)request.getAttribute("branchList");
 		if(list.size()<=0){%>
         <table width="96%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <td  height="40" align="center" >暂无部门信息!</td>
+            <td  height="40" align="center" >鏆傛棤閮ㄩ棬淇℃伅!</td>
           </tr>
 		  </table>
 		<%}else{%>
         <table width="96%" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#DDDDDA">
           <tr>
-            <td width="24%" align="center" bgcolor="#D7F6FB">部门名称</td>
-            <td width="27%" align="center" bgcolor="#D7F6FB">电话</td>
-            <td align="center" bgcolor="#D7F6FB">备注</td>
-            <td width="6%" align="center" bgcolor="#D7F6FB">删除</td>
+            <td width="24%" align="center" bgcolor="#D7F6FB">閮ㄩ棬鍚嶇О</td>
+            <td width="27%" align="center" bgcolor="#D7F6FB">鐢佃瘽</td>
+            <td align="center" bgcolor="#D7F6FB">澶囨敞</td>
+            <td width="6%" align="center" bgcolor="#D7F6FB">鍒犻櫎</td>
           </tr>
         <%
 Iterator it=list.iterator();
@@ -66,7 +65,7 @@ while(it.hasNext()){
             <td>&nbsp;<%=tel%></td>
             <td>&nbsp;<%=memo%>&nbsp;&nbsp;</td>
             <td align="center">
-            <a href="branch.do?action=branchdel&id=<%=id%>&val=1">删除</a>            </td>
+            <a href="branch.do?action=branchdel&id=<%=id%>&val=1">鍒犻櫎</a>            </td>
           </tr>
 		  <%}%>
         </table>

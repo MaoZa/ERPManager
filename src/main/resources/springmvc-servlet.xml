@@ -20,9 +20,9 @@
 	
 	<!-- 把servlet请求处理不了的资源交给默认解析器 -->
 	<mvc:default-servlet-handler/>
-	<mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/Css/" mapping="/Css/**"></mvc:resources>
 	<mvc:resources location="/images/" mapping="/images/**"></mvc:resources>
-	<mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
+	<mvc:resources location="/JS/" mapping="/JS/**"></mvc:resources>
 	
 	<!-- 开启注解 -->
 	<mvc:annotation-driven></mvc:annotation-driven>

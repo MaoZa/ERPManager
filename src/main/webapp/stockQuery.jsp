@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="com.actionForm.StockMainViewForm"%>
 <%@page import="com.core.GetTime"%>
 <%@page import="java.util.*"%>

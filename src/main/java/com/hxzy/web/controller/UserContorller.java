@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hxzy.pojo.Tb_user;
 import com.hxzy.service.UserSerivce;
-
 @RequestMapping("user")
 @Controller
 public class UserContorller {
@@ -17,8 +16,10 @@ public class UserContorller {
 	
 	@RequestMapping("login")
 	public String userLogin(Tb_user user, Model model) {
-		int temp = userSerivce.loginCheck(user.getName(), user.getPwd());
-		if(temp > 0) {
+		Tb_user user1 = userSerivce.loginCheck(user.getName(), user.getPwd());
+		System.out.println(user1);
+		if(user1!=null) {
+			model.addAttribute("user", user1);
 			return "main";
 		}else {
 			model.addAttribute("error", "用户名或密码错误");

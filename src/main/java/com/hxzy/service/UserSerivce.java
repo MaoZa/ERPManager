@@ -12,7 +12,7 @@ public interface UserSerivce {
 	 * @param password
 	 * @return int
 	 */
-	public int loginCheck(String username, String password);
+	public Tb_user loginCheck(String username, String password);
 	
 	/***
 	 * 查询所有用户信息

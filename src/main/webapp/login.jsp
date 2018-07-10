@@ -20,7 +20,7 @@
 </script>
 </head>
 <body>
-	<form name="form1" method="post" action="user.do?action=login">
+	<form name="form1" method="post" action="user/login">
 		<table align="center" background="images/login.jpg" width="1000"
 			height="700" style="background-size: 100% 100%;">
 

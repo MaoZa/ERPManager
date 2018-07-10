@@ -1,4 +1,4 @@
-<%@page contentType="text/html; charset=gb2312" language="java"%>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.ProviderForm"%>
 <%@page import="com.dao.GoodsDAO"%>

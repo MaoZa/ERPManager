@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=gb2312"%>
+<%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <table width="99%" height="55"  border="0" align="center" cellpadding="-2" cellspacing="-2">
   <tr>
 	<td height="2" colspan="4"></td>
@@ -10,7 +10,7 @@
   </tr>
   <tr>
 	<td height="28">&nbsp;</td>
-	<td align="center">��վ��ʹ��IE6.0�����ϰ汾 1024*768Ϊ�����ʾЧ��</td>
+	<td align="center">本站请使用IE6.0或以上版本 1024*768为最佳显示效果</td>
 	<td>&nbsp;</td>
   </tr>
 </table>
