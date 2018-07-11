@@ -1,7 +1,8 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>��תҳ</title>
+<title>中转页</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>

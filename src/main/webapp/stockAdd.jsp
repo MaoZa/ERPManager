@@ -1,4 +1,5 @@
-<%@page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.ProviderForm"%>
 <%@page import="com.dao.GoodsDAO"%>
@@ -22,10 +23,10 @@ boolean flag=false;
   //List listgoods=(List)request.getAttribute("goodsList");
  // List listprovider = (List) request.getAttribute("providerList");
   if (listgoods.size() <= 0) {
-    out.println("<script language='javascript'>alert('请先录入物资信息');window.location.href='goods.do?action=goodsRequest';</script>");
+    out.println("<script language='javascript'>alert('请先录入物资信息');window.location.href='goods/goodsRequest';</script>");
   }
   else if (listprovider.size() <= 0) {
-    out.println("<script language='javascript'>alert('请先录入供应商信息');window.location.href='provider.do?action=providerQuery';</script>");
+    out.println("<script language='javascript'>alert('请先录入供应商信息');window.location.href='provider/providerQuery';</script>");
   }
   else {
     int goodsid = -1;
@@ -72,7 +73,7 @@ function mycheck(form){
         <tr>
           <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
           <td align="center" valign="top">&nbsp;
-            <form name="form1" method="post" action="cart.do?action=add" onSubmit="return mycheck(form1)">
+            <form name="form1" method="post" action="cart/add" onSubmit="return mycheck(form1)">
               <table width="96%" height="56" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
                 <tr>
                   <td width="35%" align="center" bgcolor="#D7F6FB">物资名称[规格]</td>
@@ -93,7 +94,7 @@ function mycheck(form){
 					myform.submit();
 				  }
 		  function ChangeItem(id){
-		  	window.location.href="instorage.do?action=changeGoods&id="+id;
+		  	window.location.href="instorage/changeGoods&id="+id;
 		  }
 		  </script>
                   <td align="left"style="padding-left:10px"><select name="id" class="select" id="id" onChange="ChangeItem(this.value)">
@@ -149,14 +150,14 @@ function mycheck(form){
                   <td width="25%" align="left" style="padding-left:10px"><%=sesProducer%></td>
                   <td width="17%" align="left" style="padding-left:15px"><%=sesPrice%>元</td>
                   <td width="17%" align="left" style="padding-left:20px"><%=sesNumber%>&nbsp;[<%=sesunit%>]</td>
-                  <td width="6%" align="center"><a href="cart.do?action=remove&removeid=<%=i%>">移去</a></td>
+                  <td width="6%" align="center"><a href="cart/remove&removeid=<%=i%>">移去</a></td>
                 </tr>
 				<%
 					}
 				}%>
               </table>
             </form>
-            <form name="form2" method="post" action="instorage.do?action=stockadd" onSubmit="return mycheck(form2)">
+            <form name="form2" method="post" action="instorage/stockadd" onSubmit="return mycheck(form2)">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td>&nbsp;</td>
@@ -195,7 +196,7 @@ function mycheck(form){
 				  <%if(flag){%>
 				  <input name="Submit4" type="submit" class="btn_grey" value="保存">
                     &nbsp;
-                    <input name="Submit22" type="button" class="btn_grey" value="重置" onClick="window.location.href='cart.do?action=clear';"><%}%>
+                    <input name="Submit22" type="button" class="btn_grey" value="重置" onClick="window.location.href='cart/clear';"><%}%>
                     &nbsp;</td>
                 </tr>
               </table>

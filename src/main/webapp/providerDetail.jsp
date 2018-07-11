@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="com.actionForm.ProviderForm" %>
 <%@ page import="com.dao.ProviderDAO" %>
 <%
@@ -8,7 +9,7 @@ if(providerForm==null){
 %>
 <script language="javascript">
 alert("您的操作有误！");
-window.location.href="provider.do?action=providerQuery";
+window.location.href="provider/providerQuery";
 </script>
 <%
 }else{
@@ -47,7 +48,7 @@ window.location.href="provider.do?action=providerQuery";
       <tr>
         <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
         <td align="center" valign="top">&nbsp;
-		<form name="form1" method="post" action="provider.do?action=providerModify" onSubmit="return mycheck(form1)">
+		<form name="form1" method="post" action="provider/providerModify" onSubmit="return mycheck(form1)">
         <table width="96%" height="310" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
             <td width="31%" align="center">供应商名称：</td>
@@ -88,7 +89,7 @@ window.location.href="provider.do?action=providerQuery";
            <td>&nbsp;</td>
            <td>
             &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='provider.do?action=providerQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='provider/providerQuery'"></td>
          </tr>
         </table>
 		</form>

@@ -1,4 +1,5 @@
-<%@page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.actionForm.LoanForm"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.core.GetTime"%>
@@ -55,7 +56,7 @@ function check(myform){
 <table width="96%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td align="center" valign="top">
-		<form name="myform" method="post" action="ifDeal.do?action=loanQuery">
+		<form name="myform" method="post" action="ifDeal/loanQuery">
           <table width="98%"  border="0" cellpadding="0" cellspacing="0" bgcolor="#E3F4F7" class="tableBorder">
             <tr>
               <td rowspan="3" align="center">&nbsp;<img src="images/search.gif" width="45" height="28"></td>
@@ -154,7 +155,7 @@ for(int i=0;i<list.size();i++){
   }
 %>
   <tr>
-    <td style="padding:5px;">&nbsp;<a href="ifDeal.do?action=loanDetail&id=<%=id%>"><%=lno%></a></td>
+    <td style="padding:5px;">&nbsp;<a href="ifDeal/loanDetail&id=<%=id%>"><%=lno%></a></td>
     <td style="padding:5px;"><%=goodsname%> [&nbsp;<%=spec%>&nbsp;]</td>
     <td style="padding:5px;">&nbsp;<%=borrowperson%></td>
     <td style="padding:5px;">&nbsp;<%=btel%></td>

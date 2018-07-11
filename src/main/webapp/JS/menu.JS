@@ -176,30 +176,30 @@ function outbg(tdbg){
 tdbg.style.background='url(images/item_out.gif)'
 tdbg.style.border=''
 }
-var instoragemenu='<div bgcolor=yellow style=z-index:100><table width=60 bgcolor=yellow ><tr><td id=stock onMouseOver=overbg(stock) onMouseOut=outbg(stock)><a href=instorage.do?action=changeGoods>采购登记</a></td></tr>\
-<tr><td id=instorage onMouseOver=overbg(instorage) onMouseOut=outbg(instorage)><a href=ifDeal.do?action=inStockQuery>审核入库</a></td></tr>\
-<tr><td id=back onMouseOver=overbg(back) onMouseOut=outbg(back)><a href=ifDeal.do?action=loanBackQuery>借出归还</a></td></tr>\
+var instoragemenu='<div bgcolor=yellow style=z-index:100><table width=60 bgcolor=yellow ><tr><td id=stock onMouseOver=overbg(stock) onMouseOut=outbg(stock)><a href=/instorage/changeGoods>采购登记</a></td></tr>\
+<tr><td id=instorage onMouseOver=overbg(instorage) onMouseOut=outbg(instorage)><a href=/ifDeal/inStockQuery>审核入库</a></td></tr>\
+<tr><td id=back onMouseOver=overbg(back) onMouseOut=outbg(back)><a href=/ifDeal/loanBackQuery>借出归还</a></td></tr>\
 </table></div>'
-var outstoragemenu='<table width=60 bgcolor=yellow ><tr><td id=getuse onMouseOver=overbg(getuse) onMouseOut=outbg(getuse)><a href=getUse.do?action=getuseaddquery>部门领用</a></td></tr>\
-<tr><td id=loan onMouseOver=overbg(loan) onMouseOut=outbg(loan)><a href=loan.do?action=loanaddquery>物资借出</a></td></tr>\
-<tr><td id=outstorage onMouseOver=overbg(outstorage) onMouseOut=outbg(outstorage)><a href=ifDeal.do?action=loanApproveQuery>借出审核</a></td></tr>\
+var outstoragemenu='<table width=60 bgcolor=yellow ><tr><td id=getuse onMouseOver=overbg(getuse) onMouseOut=outbg(getuse)><a href=/getUse/getuseaddquery>部门领用</a></td></tr>\
+<tr><td id=loan onMouseOver=overbg(loan) onMouseOut=outbg(loan)><a href=/loan/loanaddquery>物资借出</a></td></tr>\
+<tr><td id=outstorage onMouseOver=overbg(outstorage) onMouseOut=outbg(outstorage)><a href=/ifDeal/loanApproveQuery>借出审核</a></td></tr>\
 </table>'
-var dealmenu='<table width=70 bgcolor=yellow ><tr><td id=materialcheck onMouseOver=overbg(materialcheck) onMouseOut=outbg(materialcheck)><a href=storageCheck.jsp>库存盘点</a></td></tr>\
-<tr><td id=damage onMouseOver=overbg(damage) onMouseOut=outbg(damage)><a href=damage.do?action=damageaddquery>部门报损</a></td></tr>\
+var dealmenu='<table width=70 bgcolor=yellow ><tr><td id=materialcheck onMouseOver=overbg(materialcheck) onMouseOut=outbg(materialcheck)><a href=/storageCheck.jsp>库存盘点</a></td></tr>\
+<tr><td id=damage onMouseOver=overbg(damage) onMouseOut=outbg(damage)><a href=/damage/damageaddquery>部门报损</a></td></tr>\
 </table>'
-var querymenu='<table width=80 bgcolor=yellow ><tr><td id=querystock onMouseOver=overbg(querystock) onMouseOut=outbg(querystock)><a href=ifDeal.do?action=stockQuery>采购单查询</a></td></tr>\
-<tr><td id=queryinstorage onMouseOver=overbg(queryinstorage) onMouseOut=outbg(queryinstorage)><a href=ifDeal.do?action=inStorageSQuery>入库查询</a></td></tr>\
-<tr><td id=querygetuse onMouseOver=overbg(querygetuse) onMouseOut=outbg(querygetuse)><a href=ifDeal.do?action=getuseQuery>部门领用查询</a></td></tr>\
-<tr><td id=getuseTotal onMouseOver=overbg(getuseTotal) onMouseOut=outbg(getuseTotal)><a href=ifDeal.do?action=getuseTotal>部门领用汇总</a></td></tr>\
-<tr><td id=querydamage onMouseOver=overbg(querydamage) onMouseOut=outbg(querydamage)><a href=ifDeal.do?action=damageQuery>部门报损查询</a></td></tr>\
-<tr><td id=damageTotal onMouseOver=overbg(damageTotal) onMouseOut=outbg(damageTotal)><a href=ifDeal.do?action=damageTotal>部门报损汇总</a></td></tr>\
-<tr><td id=queryloan onMouseOver=overbg(queryloan) onMouseOut=outbg(queryloan)><a href=ifDeal.do?action=loanQuery>借出查询</a></td></tr>\
-<tr><td id=total onMouseOver=overbg(total) onMouseOut=outbg(total)><a href=ifDeal.do?action=branchTotal>部门汇总</a></td></tr>\
+var querymenu='<table width=80 bgcolor=yellow ><tr><td id=querystock onMouseOver=overbg(querystock) onMouseOut=outbg(querystock)><a href=/ifDeal/stockQuery>采购单查询</a></td></tr>\
+<tr><td id=queryinstorage onMouseOver=overbg(queryinstorage) onMouseOut=outbg(queryinstorage)><a href=/ifDeal/inStorageSQuery>入库查询</a></td></tr>\
+<tr><td id=querygetuse onMouseOver=overbg(querygetuse) onMouseOut=outbg(querygetuse)><a href=/ifDeal/getuseQuery>部门领用查询</a></td></tr>\
+<tr><td id=getuseTotal onMouseOver=overbg(getuseTotal) onMouseOut=outbg(getuseTotal)><a href=/ifDeal/getuseTotal>部门领用汇总</a></td></tr>\
+<tr><td id=querydamage onMouseOver=overbg(querydamage) onMouseOut=outbg(querydamage)><a href=/ifDeal/damageQuery>部门报损查询</a></td></tr>\
+<tr><td id=damageTotal onMouseOver=overbg(damageTotal) onMouseOut=outbg(damageTotal)><a href=/ifDeal/damageTotal>部门报损汇总</a></td></tr>\
+<tr><td id=queryloan onMouseOver=overbg(queryloan) onMouseOut=outbg(queryloan)><a href=/ifDeal/loanQuery>借出查询</a></td></tr>\
+<tr><td id=total onMouseOver=overbg(total) onMouseOut=outbg(total)><a href=/ifDeal/branchTotal>部门汇总</a></td></tr>\
 </table>'
-var baiscmenu='<table width=70 bgcolor=yellow ><tr><td id=provider onMouseOver=overbg(provider) onMouseOut=outbg(provider)><a href=provider.do?action=providerQuery>供应商管理</a></td></tr>\
-<tr><td id=goods onMouseOver=overbg(goods) onMouseOut=outbg(goods)><a href=goods.do?action=goodsRequest>物资管理</a></td></tr>\
-<tr><td id=branch onMouseOver=overbg(branch) onMouseOut=outbg(branch)><a href=branch.do?action=branchQuery>部门管理</a></td></tr>\
+var baiscmenu='<table width=70 bgcolor=yellow ><tr><td id=provider onMouseOver=overbg(provider) onMouseOut=outbg(provider)><a href=/provider/providerQuery>供应商管理</a></td></tr>\
+<tr><td id=goods onMouseOver=overbg(goods) onMouseOut=outbg(goods)><a href=/goods/goodsRequest>物资管理</a></td></tr>\
+<tr><td id=branch onMouseOver=overbg(branch) onMouseOut=outbg(branch)><a href=/branch/branchQuery>部门管理</a></td></tr>\
 </table>'
-var sysmenu='<table width=70 bgcolor=yellow ><tr><td id=user onMouseOver=overbg(user) onMouseOut=outbg(user)><a href=user.do?action=userQuery>用户管理</a></td></tr>\
-<tr><td id=initialize onMouseOver=overbg(initialize) onMouseOut=outbg(initialize)><a href=initialize.jsp>系统初始化</a></td></tr>\
+var sysmenu='<table width=70 bgcolor=yellow ><tr><td id=user onMouseOver=overbg(user) onMouseOut=outbg(user)><a href=/user/userQuery>用户管理</a></td></tr>\
+<tr><td id=initialize onMouseOver=overbg(initialize) onMouseOut=outbg(initialize)><a href=/initialize.jsp>系统初始化</a></td></tr>\
 </table>'

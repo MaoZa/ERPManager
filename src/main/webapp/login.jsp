@@ -1,18 +1,19 @@
-<%@ page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
-<title>Îï×Ê¹ÜÀíÏµÍ³</title>
+<title>ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ÏµÍ³</title>
 <link href="Css/style.css" rel="stylesheet">
 <script type="text/javascript">
 	function check(form) {
 		if (form.name.value == "") {
-			alert("ÇëÊäÈëÓÃ»§Ãû³Æ!");
+			alert("è¯·è¾“å…¥ç”¨æˆ·åç§°!");
 			form.name.focus();
 			return false;
 		}
 		if (form.pwd.value == "") {
-			alert("ÇëÊäÈëÃÜÂë!");
+			alert("è¯·è¾“å…¥å¯†ç !");
 			form.pwd.focus();
 			return false;
 		}
@@ -29,18 +30,18 @@
 				<td>
 					<table align="center">
 						<tr>
-							<td>¹ÜÀíÕË»§£º</td>
+							<td>ç®¡ç†è´¦æˆ·ï¼š</td>
 							<td><input name="name" type="text" id="name" size="25"></td>
 						</tr>
 						<tr>
-							<td>µÇÂ¼ÃÜÂë£º</td>
+							<td>ç™»å½•å¯†ç ï¼š</td>
 							<td><input name="pwd" type="password" id="pwd" size="25"></td>
 						</tr>
 						<tr>
 							<td><input name="Submit" type="submit" class="btn_grey"
-								value="È·¶¨" onClick="return check(form1)"></td>
+								value="ç¡®å®š" onClick="return check(form1)"></td>
 							<td><input name="Submit3" type="reset" class="btn_grey"
-								value="ÖØÖÃ"></td>
+								value="é‡ç½®"></td>
 						</tr>
 					</table>
 				</td>

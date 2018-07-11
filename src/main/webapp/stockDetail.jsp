@@ -1,4 +1,5 @@
-<%@page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.ProviderForm"%>
 <%@page import="com.dao.GoodsDAO"%>
@@ -29,7 +30,7 @@ boolean flag=false;
           <td width="26%" align="right"><div id="bgclock" class="word_white"> </div></td>
           <td width="4%">&nbsp;</td>
           <td width="70%" valign="bottom"> 当前位置：查询统计
-            &gt; <a href="ifDeal.do?action=stockQuery">采购单查询</a>&nbsp;&gt; 采购单详细信息            &gt;&gt;&gt; </td>
+            &gt; <a href="ifDeal/stockQuery">采购单查询</a>&nbsp;&gt; 采购单详细信息            &gt;&gt;&gt; </td>
         </tr>
       </table>
       <table width="100%" height="385" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">

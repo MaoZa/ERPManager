@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
 <title>操作成功!</title>
@@ -12,21 +13,21 @@ switch(para){
 	%>
 		<script language="javascript">
 		alert("物资借出信息添加成功!");
-		window.location.href="loan.do?action=loanaddquery";
+		window.location.href="loan/loanaddquery";
 		</script>	
 	<%	break;
 	case 2:
 	%>
 		<script language="javascript">
 		alert("物资借出审核成功!");
-		window.location.href="ifDeal.do?action=loanApproveQuery";
+		window.location.href="ifDeal/loanApproveQuery";
 		</script>		
 	<%	break;
 	case 3:
 	%>
 		<script language="javascript">
 		alert("物资借出归还成功!");
-		window.location.href="ifDeal.do?action=loanBackQuery";
+		window.location.href="ifDeal/loanBackQuery";
 		</script>		
 	<%	break;
 }

@@ -1,12 +1,12 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" %>
-<%@ page import="com.actionForm.UserForm" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 UserForm userForm=(UserForm)request.getAttribute("userList");
 if(userForm==null){
 %>
 <script language="javascript">
 alert("您的操作有误！");
-window.location.href="user.do?action=userQuery";
+window.location.href="user/userQuery";
 </script>
 <%
 }else{
@@ -44,7 +44,7 @@ window.location.href="user.do?action=userQuery";
       <tr>
         <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
         <td align="center" valign="top">&nbsp;
-		<form name="form1" method="post" action="user.do?action=userModify">
+		<form name="form1" method="post" action="user/userModify">
         <table width="96%" height="200" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
             <td width="16%" align="center">&nbsp;</td>
@@ -80,7 +80,7 @@ window.location.href="user.do?action=userQuery";
 &nbsp;
 <input name="Submit2" type="reset" class="btn_grey" value="重置">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='user.do?action=userQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='user/userQuery'"></td>
            <td>&nbsp;</td>
          </tr>
         </table>

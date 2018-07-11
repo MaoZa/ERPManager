@@ -1,4 +1,5 @@
-<%@page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.actionForm.GetUseForm"%>
 <%@page import="com.actionForm.BranchForm"%>
 <%@page import="com.actionForm.GoodsForm"%>
@@ -56,7 +57,7 @@ function check(myform){
 <table width="96%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td align="center" valign="top">
-		<form name="myform" method="post" action="ifDeal.do?action=getuseQuery">
+		<form name="myform" method="post" action="ifDeal/getuseQuery">
           <table width="98%"  border="0" cellpadding="0" cellspacing="0" bgcolor="#E3F4F7" class="tableBorder">
             <tr>
               <td rowspan="2" align="center">&nbsp;<img src="images/search.gif" width="45" height="28"></td>

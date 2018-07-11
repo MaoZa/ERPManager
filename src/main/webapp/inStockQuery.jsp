@@ -1,4 +1,5 @@
-<%@page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.actionForm.StockMainViewForm"%>
 <%@page import="com.core.GetTime"%>
 <%@page import="java.util.*"%>
@@ -57,7 +58,7 @@ function check(myform){
 <table width="96%" height="487"  border="0" cellpadding="0" cellspacing="0">
       <tr>
         <td align="center" valign="top">
-		<form name="myform" method="post" action="ifDeal.do?action=inStockQuery">
+		<form name="myform" method="post" action="ifDeal/inStockQuery">
           <table width="98%"  border="0" cellpadding="0" cellspacing="0" bgcolor="#E3F4F7" class="tableBorder">
             <tr>
               <td rowspan="2" align="center">&nbsp;<img src="images/search.gif" width="45" height="28"></td>
@@ -136,12 +137,12 @@ for(int i=0;i<list.size();i++){
   }
 %>
   <tr>
-    <td style="padding:5px;">&nbsp;<a href="ifDeal.do?action=stockDetail&id=<%=id%>"><%=sno%></a></td>
+    <td style="padding:5px;">&nbsp;<a href="ifDeal/stockDetail&id=<%=id%>"><%=sno%></a></td>
     <td style="padding:5px;"><%=provider%></td>
     <td style="padding:5px;">&nbsp;<%=principal%></td>
     <td style="padding:5px;">&nbsp;<%=username%></td>
     <td style="padding:5px;">&nbsp;<%=createTime%></td>
-    <td align="center" style="padding:5px;"><a href="instorage.do?action=eligible&id=<%=id%>"><img src="images/enforce.gif" width="16" height="16" border="0"></a>&nbsp;<a href="instorage.do?action=uneligible&id=<%=id%>"><img src="images/noel.gif" width="16" height="16" border="0"></a></td>
+    <td align="center" style="padding:5px;"><a href="instorage/eligible&id=<%=id%>"><img src="images/enforce.gif" width="16" height="16" border="0"></a>&nbsp;<a href="instorage/uneligible&id=<%=id%>"><img src="images/noel.gif" width="16" height="16" border="0"></a></td>
  </tr>
  <%} %>
 </table>

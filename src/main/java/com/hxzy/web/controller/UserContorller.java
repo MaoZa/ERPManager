@@ -1,5 +1,7 @@
 package com.hxzy.web.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +17,11 @@ public class UserContorller {
 	private UserSerivce userSerivce;
 	
 	@RequestMapping("login")
-	public String userLogin(Tb_user user, Model model) {
+	public String userLogin(Tb_user user, Model model, HttpServletRequest request) {
 		Tb_user user1 = userSerivce.loginCheck(user.getName(), user.getPwd());
 		System.out.println(user1);
 		if(user1!=null) {
-			model.addAttribute("user", user1);
+			request.getSession().setAttribute("user", user1);
 			return "main";
 		}else {
 			model.addAttribute("error", "用户名或密码错误");

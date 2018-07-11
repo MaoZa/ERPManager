@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 if(session.getAttribute("username")!=null || session.getAttribute("username")!=""){
 %>
@@ -47,7 +48,7 @@ function check(form){
       <tr>
         <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
         <td align="center" valign="top">&nbsp;
-		<form name="form1" method="post" action="user.do?action=pwsModify" onSubmit="return check(form1)">
+		<form name="form1" method="post" action="user/pwsModify" onSubmit="return check(form1)">
         <table width="96%" height="160" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
             <td width="31%" align="center">用户名称：<input name="id" type="hidden" id="id" size="10" value="<%=user_id%>"></td>

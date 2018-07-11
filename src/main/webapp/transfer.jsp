@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
 <title>操作成功!</title>
@@ -7,7 +8,7 @@
 
 <body>
 <script language="javascript">
-window.location.href="instorage.do?action=changeGoods";
+window.location.href="instorage/changeGoods";
 </script>		
 </body>
 </html>

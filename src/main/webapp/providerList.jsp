@@ -1,5 +1,6 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" %>
-<%@ page import="com.actionForm.ProviderForm" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Iterator"%>
 <html>
@@ -32,15 +33,14 @@
             <td align="right"><a href="providerAdd.jsp">添加供应商信息</a></td>
           </tr>
         </table>
-<%
-List list=(List)request.getAttribute("providerList");
-		if(list.size()<=0){%>
-        <table width="96%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td  height="40" align="center" >暂无供应商信息!</td>
-          </tr>
-		  </table>
-		<%}else{%>
+        <c:if test="${empty providerList }">
+	        <table width="96%" border="0" cellspacing="0" cellpadding="0">
+	          <tr>
+	            <td  height="40" align="center" >暂无供应商信息!</td>
+	          </tr>
+		 	</table>
+		</c:if>
+		<c:if test="${!empty providerList }">
         <table width="96%" border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" bordercolordark="#FFFFFF" bordercolorlight="#DDDDDA">
           <tr>
             <td width="24%" align="center" bgcolor="#D7F6FB">供应商名称</td>
@@ -51,43 +51,21 @@ List list=(List)request.getAttribute("providerList");
             <td width="5%" align="center" bgcolor="#D7F6FB">修改</td>
             <td width="6%" align="center" bgcolor="#D7F6FB">删除</td>
           </tr>
-        <%
-Iterator it=list.iterator();
-int id=-1;
-String name="";
-String address="";
-String fax="";
-String tel="";
-String postcode="";
-String bankNO="";
-String bankName="";
-String memo="";
-while(it.hasNext()){
-	ProviderForm providerForm=(ProviderForm)it.next();
-        id=providerForm.getId();
-        name=providerForm.getName();
-        address=providerForm.getAddress();
-        fax=providerForm.getFax();
-        tel=providerForm.getTel();
-        postcode=providerForm.getPostcode();
-        bankNO=providerForm.getBankNo();
-        bankName=providerForm.getBankName();
-        memo=providerForm.getMemo();
-%>
-          <tr>
-            <td>&nbsp;<a href="providerDetail.jsp?id=<%=id%>"><%=name %></a></td>
-            <td>&nbsp;<%=address%></td>
-            <td>&nbsp;<%=postcode%></td>
-            <td>&nbsp;<%=tel%></td>
-            <td>&nbsp;<%=fax%></td>
-            <td>&nbsp;<a href="provider.do?action=providerMQuery&id=<%=id%>">修改</a></td>
-            <td align="center">
-            <a href="provider.do?action=providerdel&id=<%=id%>&val=1">删除</a>
-            </td>
-          </tr>
-		  <%}%>
+			<c:forEach items="${providerList }" var="provider">
+		          <tr>
+		            <td>&nbsp;<a href="provider/providerDetail/${provider.id }">${provider.name }</a></td>
+		            <td>&nbsp;${provider.address }</td>
+		            <td>&nbsp;${provider.postcode }</td>
+		            <td>&nbsp;${provider.tel }</td>
+		            <td>&nbsp;${provider.fax }</td>
+		            <td>&nbsp;<a href="provider/providerMQuery/${provider.id }">修改</a></td>
+		            <td align="center">
+		            <a href="provider/providerdel/${provider.id }/1">删除</a>
+		            </td>
+		          </tr>
+         	 </c:forEach>
         </table>
-		<%}%>
+        </c:if>
 		</td>
         <td width="10" valign="top" background="images/right.jpg">&nbsp;</td>
       </tr>

@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" %>
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <script language="javascript">
 function check(form){
 	if(form.name.value==""){
@@ -40,7 +40,7 @@ function check(form){
       <tr>
         <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
         <td align="center" valign="top">&nbsp;
-		<form name="form1" method="post" action="user.do?action=useradd" onSubmit="return check(form1)">
+		<form name="form1" method="post" action="user/useradd" onSubmit="return check(form1)">
         <table width="96%" height="160" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
             <td width="31%" align="center">用户名称：</td>
@@ -61,7 +61,7 @@ function check(form){
 &nbsp;
 <input name="Submit2" type="reset" class="btn_grey" value="重置">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='user.do?action=userQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='user/userQuery'"></td>
          </tr>
         </table>
 		</form>

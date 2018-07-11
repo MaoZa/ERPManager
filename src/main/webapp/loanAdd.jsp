@@ -1,4 +1,5 @@
-<%@page contentType="text/html; charset=utf-8" language="java"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="com.actionForm.GoodsForm"%>
 <%@page import="com.actionForm.BranchForm"%>
 <%@page import="com.actionForm.StorageForm"%>
@@ -19,10 +20,10 @@ boolean flag=false;
     BranchDAO branchDAO = new BranchDAO();
     listbranch = branchDAO.query(null);
   if (listgoods.size() <= 0) {
-    out.println("<script language='javascript'>alert('请先将物资入库，再进行领用!');window.location.href='goods.do?action=goodsRequest';</script>");
+    out.println("<script language='javascript'>alert('请先将物资入库，再进行领用!');window.location.href='goods/goodsRequest';</script>");
   }
   else if (listbranch.size() <= 0) {
-    out.println("<script language='javascript'>alert('请先录入部门信息');window.location.href='branch.do?action=branchQuery';</script>");
+    out.println("<script language='javascript'>alert('请先录入部门信息');window.location.href='branch/branchQuery';</script>");
   }
   else {
 %>
@@ -71,7 +72,7 @@ function mycheck(form){
         <tr>
           <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
           <td align="center" valign="top">&nbsp;
-            <form name="form1" method="post" action="loan.do?action=loanadd" onSubmit="return mycheck(form1)">
+            <form name="form1" method="post" action="loan/loanadd" onSubmit="return mycheck(form1)">
               <table width="60%" height="253" border="1" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
                 <tr>
                   <script language="javascript">
@@ -88,7 +89,7 @@ function mycheck(form){
 					myform.totalpay.value=(myform.number.value*myform.price.value).toFixed(2);     //保留两位小数
 				  }
 		  function ChangeItem(id){
-		  	window.location.href="loan.do?action=loanaddquery&id="+id;
+		  	window.location.href="loan/loanaddquery&id="+id;
 		  }
 		  </script>
                   <td width="34%" align="left"style="padding-left:10px">物资名称：</td>

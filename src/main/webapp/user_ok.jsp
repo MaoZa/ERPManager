@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
 <title>操作成功!</title>
@@ -12,21 +13,21 @@ switch(para){
 	%>
 		<script language="javascript">
 		alert("用户信息添加成功!");
-		window.location.href="user.do?action=userQuery";
+		window.location.href="user/userQuery";
 		</script>	
 	<%	break;
 	case 2:
 	%>
 		<script language="javascript">
 		alert("用户权限设置成功!");
-		window.location.href="user.do?action=userQuery";
+		window.location.href="user/userQuery";
 		</script>		
 	<%	break;
 	case 3:
 	%>
 		<script language="javascript">
 		alert("用户信息删除成功!");
-		window.location.href="user.do?action=userQuery";
+		window.location.href="user/userQuery";
 		</script>		
 	<%	break;
 	case 4:

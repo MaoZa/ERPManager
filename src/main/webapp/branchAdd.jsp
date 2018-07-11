@@ -1,4 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <script language="javascript">
 function mycheck(form1){
 	if(form1.name.value==""){
@@ -31,7 +32,7 @@ function mycheck(form1){
       <tr>
         <td width="5" valign="top" background="images/left.gif">&nbsp;</td>
         <td align="center" valign="top">&nbsp;
-		<form name="form1" method="post" action="branch.do?action=branchadd" onSubmit="return mycheck(form1)">
+		<form name="form1" method="post" action="branch/branchadd" onSubmit="return mycheck(form1)">
         <table width="96%" height="160" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bordercolorlight="#DDDDDA" bordercolordark="#FFFFFF">
           <tr>
             <td width="31%" align="center">部门名称：</td>
@@ -52,7 +53,7 @@ function mycheck(form1){
 &nbsp;
 <input name="Submit2" type="reset" class="btn_grey" value="重置">
 &nbsp;
-<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='branch.do?action=branchQuery'"></td>
+<input name="Submit3" type="button" class="btn_grey" value="返回" onClick="window.location.href='branch/branchQuery'"></td>
          </tr>
         </table>
 		</form>
