@@ -20,5 +20,9 @@ public class BranchTest {
 	public void test() {
 		System.out.println(branchService.branchQuery());
 	}
-
+	
+	@Test
+	public void branchDamage() {
+		System.out.println(branchService.queryBanchDamage(1));
+	}
 }

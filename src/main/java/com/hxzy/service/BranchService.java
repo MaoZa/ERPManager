@@ -3,6 +3,7 @@ package com.hxzy.service;
 import java.util.List;
 
 import com.hxzy.pojo.Tb_branch;
+import com.hxzy.pojo.Tb_branchDamage;
 
 public interface BranchService {
 	/***
@@ -24,4 +25,11 @@ public interface BranchService {
 	 * @return
 	 */
 	public int branchDel(int id);
+	
+	/***
+	 * 查询部门报损信息
+	 * @param branchid
+	 * @return
+	 */
+	public Tb_branchDamage queryBanchDamage(int branchid) ;
 }

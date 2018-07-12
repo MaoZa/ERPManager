@@ -1,7 +1,6 @@
 package com.hxzy.web.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hxzy.pojo.Tb_branch;
+import com.hxzy.pojo.Tb_branchDamage;
 import com.hxzy.service.BranchService;
 
 @RequestMapping("branch")
@@ -39,7 +39,7 @@ public class BranchController {
 		}
 	}
 	
-	@RequestMapping("/branchdel/{id}/{val}")
+	@RequestMapping("branchdel/{id}/{val}")
 	public String branchdel(Model model, @PathVariable int id) {
 		int temp = branchService.branchDel(id);
 		if(temp > 0) {
@@ -49,5 +49,17 @@ public class BranchController {
 			model.addAttribute("error" , "部门信息删除失败");
 			return "error";
 		}
+	}
+	
+	@RequestMapping("branchDamageInfo")
+	public String branchDamageInfo(Model model) {
+		
+		List<Tb_branch> branchs = branchService.branchQuery();
+		List<Tb_branchDamage> branchDamages  = new ArrayList<Tb_branchDamage>();
+		for (Tb_branch tb_branch : branchs) {
+			branchDamages.add(branchService.queryBanchDamage(tb_branch.getId()));
+		}
+		model.addAttribute("branchDamages", branchDamages);
+		return "branchTotal";
 	}
 }

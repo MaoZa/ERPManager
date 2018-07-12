@@ -1,6 +1,7 @@
 package com.hxzy.dao;
 
 import com.hxzy.pojo.Tb_branch;
+import com.hxzy.pojo.Tb_branchDamage;
 import com.hxzy.pojo.Tb_branchExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
@@ -27,4 +28,6 @@ public interface Tb_branchMapper {
     int updateByPrimaryKeySelective(Tb_branch record);
 
     int updateByPrimaryKey(Tb_branch record);
+    
+    Tb_branchDamage queryBranchDamage(int branchid);
 }

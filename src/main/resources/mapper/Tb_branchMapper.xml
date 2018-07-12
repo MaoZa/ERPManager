@@ -193,4 +193,19 @@
       memo = #{memo,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  <!-- 
+  	连表部门报损查询
+   -->
+   <select id="queryBranchDamage" resultType="com.hxzy.pojo.Tb_branchDamage" parameterType="int">
+		SELECT dg.*, b.name as branchname FROM tb_branch b RIGHT JOIN
+		(SELECT damage.*, g.name as goodsname, g.spec as goodsspec, g.unit as goodsunit, g.price as goodsprice  FROM tb_goods g RIGHT JOIN 
+		(SELECT * FROM tb_damage d WHERE d.branchid = #{branchid}) damage ON damage.goodsid=g.id) dg 
+		on dg.branchid = b.id
+   </select>
+  
+  
+  
+  
 </mapper>

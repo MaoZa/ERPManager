@@ -3,7 +3,7 @@
 <html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <head>
-<title>���ʹ���ϵͳ</title>
+<title>企业物资管理系统</title>
 <link href="Css/style.css" rel="stylesheet">
 <script type="text/javascript">
 	function check(form) {
