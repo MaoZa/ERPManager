@@ -2,6 +2,8 @@ package com.hxzy.dao;
 
 import com.hxzy.pojo.Tb_stock_main;
 import com.hxzy.pojo.Tb_stock_mainExample;
+import com.hxzy.pojo.Tb_stock_main_provider;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,6 @@ public interface Tb_stock_mainMapper {
     int updateByPrimaryKeySelective(Tb_stock_main record);
 
     int updateByPrimaryKey(Tb_stock_main record);
+    
+    List<Tb_stock_main_provider> queryStockProvider(int stockId);
 }

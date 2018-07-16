@@ -2,6 +2,8 @@ package com.hxzy.dao;
 
 import com.hxzy.pojo.Tb_goods;
 import com.hxzy.pojo.Tb_goodsExample;
+import com.hxzy.pojo.Tb_goods_providername;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,6 @@ public interface Tb_goodsMapper {
     int updateByPrimaryKeySelective(Tb_goods record);
 
     int updateByPrimaryKey(Tb_goods record);
+    
+    //Tb_goods_providername queryGoodsProviderName(int goodsid);
 }

@@ -240,4 +240,9 @@
       state = #{state,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="queryStockProvider" parameterType="int" resultType="com.hxzy.pojo.Tb_stock_main_provider">
+  	SELECT s.*, p.name as providername FROM tb_stock_main s LEFT JOIN 
+  	tb_provider p ON p.id=s.providerid WHERE s.id=#{stockId}
+  </select>
 </mapper>

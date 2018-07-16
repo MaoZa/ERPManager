@@ -14,8 +14,24 @@ public class Tb_goods {
     private String producer;
 
     private Boolean ifdel;
+    
+    private String providername;
 
-    public Integer getId() {
+    @Override
+	public String toString() {
+		return "Tb_goods [id=" + id + ", name=" + name + ", spec=" + spec + ", unit=" + unit + ", price=" + price
+				+ ", producer=" + producer + ", ifdel=" + ifdel + ", providername=" + providername + "]";
+	}
+
+	public String getProvidername() {
+		return providername;
+	}
+
+	public void setProvidername(String providername) {
+		this.providername = providername;
+	}
+
+	public Integer getId() {
         return id;
     }
 

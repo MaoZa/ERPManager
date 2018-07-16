@@ -1,6 +1,10 @@
 package com.hxzy.service;
 
+import java.util.List;
+
+import com.hxzy.pojo.CartDemo;
 import com.hxzy.pojo.Tb_goods;
+import com.hxzy.pojo.Tb_stock_main;
 
 public interface InstorageService {
 
@@ -16,7 +20,7 @@ public interface InstorageService {
 	 * @param List<Tb_goods> list
 	 * @return int
 	 */
-	public int stockadd() ;
+	public int stockadd();
 	
 	/***
 	 * 审核入库
@@ -31,4 +35,23 @@ public interface InstorageService {
 	 */
 	public int uneligible();
 	
+	/***
+	 * add stock_detail
+	 */
+	public int addStockDetail(Integer stockid, CartDemo cartDemo);
+	
+	/***
+	 * add stock_main
+	 */
+	public int addStockMain(Tb_stock_main stock_main);
+	
+	/***
+	 * queryStockByState
+	 */
+	public List<Tb_stock_main> queryStockByState(int state);
+	
+	/***
+	 * queryStrockAll
+	 */
+	public List<Tb_stock_main> queryStrockAll();
 }

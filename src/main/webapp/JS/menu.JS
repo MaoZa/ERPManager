@@ -176,7 +176,7 @@ function outbg(tdbg){
 tdbg.style.background='url(images/item_out.gif)'
 tdbg.style.border=''
 }
-var instoragemenu='<div bgcolor=yellow style=z-index:100><table width=60 bgcolor=yellow ><tr><td id=stock onMouseOver=overbg(stock) onMouseOut=outbg(stock)><a href=/instorage/changeGoods>采购登记</a></td></tr>\
+var instoragemenu='<div bgcolor=yellow style=z-index:100><table width=60 bgcolor=yellow ><tr><td id=stock onMouseOver=overbg(stock) onMouseOut=outbg(stock)><a href=/instorage/changeGoods/0>采购登记</a></td></tr>\
 <tr><td id=instorage onMouseOver=overbg(instorage) onMouseOut=outbg(instorage)><a href=/ifDeal/inStockQuery>审核入库</a></td></tr>\
 <tr><td id=back onMouseOver=overbg(back) onMouseOut=outbg(back)><a href=/ifDeal/loanBackQuery>借出归还</a></td></tr>\
 </table></div>'
