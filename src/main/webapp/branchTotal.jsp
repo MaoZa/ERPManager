@@ -65,7 +65,7 @@
 											<table width="98%" border="0" cellpadding="0" cellspacing="0"
 												bgcolor="#E3F4F7" class="tableBorder">
 												<tr>
-													<td align="center">&nbsp;<img src="images/search.gif"
+													<td align="center">&nbsp;<img src="/images/search.gif"
 														width="45" height="28"></td>
 													<td><input name="flag" type="checkbox" id="flag"
 														value="b" checked style="display: none"> 统计时间： 从 <input
@@ -79,7 +79,9 @@
 										<table width="98%" height="30" border="0" cellpadding="0"
 											cellspacing="0" bordercolor="#FFFFFF">
 											<tr>
-												<td height="36" align="center">没有符合条件的部门领用信息！</td>
+												<c:if test="${empty branchDamages }">
+													<td height="36" align="center">没有符合条件的部门领用信息！</td>
+												</c:if>
 											</tr>
 										</table> 
 										<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -87,6 +89,7 @@
 												<td align="center">message</td>
 											</tr>
 										</table>
+										<c:if test="${!empty branchDamages }">
 										<table width="98%" border="1" cellpadding="0" cellspacing="0"
 											bordercolor="#FFFFFF" bordercolordark="#D2E3E6"
 											bordercolorlight="#FFFFFF">
@@ -102,21 +105,22 @@
 												<td width="8%">在用数量</td>
 												<td width="8%">在用金额</td>
 											</tr>
-											<c:forEach items="${branchDamages }" var="branchDamage">
+											<c:forEach items="${branchDamages }" var="branchDamage" >
 											<tr>
 												<td style="padding: 5px;">${branchDamage.branchname }</td>
 												<td style="padding: 5px;">${branchDamage.goodsname }[${branchDamage.goodsunit }]</td>
 												<td align="center" style="padding: 5px;">${branchDamage.goodsunit }</td>
 												<td align="center" style="padding: 5px;">${branchDamage.goodsprice }</td>
-												<td align="center" style="padding: 5px;">${branchDamage.lyamount }</td>
-												<td style="padding: 5px;">${branchDamage.goodsprice * branchDamage.lyamount }</td>
-												<td style="padding: 5px;">${branchDamage.bsamount }</td>
-												<td style="padding: 5px;">${branchDamage.goodsprice * branchDamage.bsamount }</td>
-												<td style="padding: 5px;">${branchDamage.zyamount }</td>
-												<td style="padding: 5px;">${branchDamage.goodsprice * branchDamage.zyamount }</td>
+												<td align="center" style="padding: 5px;">${branchDamage.getuseNum }</td>
+												<td style="padding: 5px;">${branchDamage.goodsprice * branchDamage.getuseNum }</td>
+												<td style="padding: 5px;">${branchDamage.damagenum }</td>
+												<td style="padding: 5px;">${branchDamage.goodsprice * branchDamage.damagenum }</td>
+												<td style="padding: 5px;">${branchDamage.getuseNum - branchDamage.damagenum }</td>
+												<td style="padding: 5px;">${branchDamage.goodsprice * (branchDamage.getuseNum - branchDamage.damagenum) }</td>
 											</tr>
 											</c:forEach>
 										</table>
+										</c:if>
 									</td>
 								</tr>
 							</table>

@@ -194,7 +194,7 @@ var querymenu='<table width=80 bgcolor=yellow ><tr><td id=querystock onMouseOver
 <tr><td id=querydamage onMouseOver=overbg(querydamage) onMouseOut=outbg(querydamage)><a href=/ifDeal/damageQuery>部门报损查询</a></td></tr>\
 <tr><td id=damageTotal onMouseOver=overbg(damageTotal) onMouseOut=outbg(damageTotal)><a href=/ifDeal/damageTotal>部门报损汇总</a></td></tr>\
 <tr><td id=queryloan onMouseOver=overbg(queryloan) onMouseOut=outbg(queryloan)><a href=/ifDeal/loanQuery>借出查询</a></td></tr>\
-<tr><td id=total onMouseOver=overbg(total) onMouseOut=outbg(total)><a href=/ifDeal/branchTotal>部门汇总</a></td></tr>\
+<tr><td id=total onMouseOver=overbg(total) onMouseOut=outbg(total)><a href=/branch/branchDamageInfo>部门汇总</a></td></tr>\
 </table>'
 var baiscmenu='<table width=70 bgcolor=yellow ><tr><td id=provider onMouseOver=overbg(provider) onMouseOut=outbg(provider)><a href=/provider/providerQuery>供应商管理</a></td></tr>\
 <tr><td id=goods onMouseOver=overbg(goods) onMouseOut=outbg(goods)><a href=/goods/goodsRequest>物资管理</a></td></tr>\

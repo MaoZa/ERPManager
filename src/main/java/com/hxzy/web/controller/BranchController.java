@@ -57,9 +57,14 @@ public class BranchController {
 		List<Tb_branch> branchs = branchService.branchQuery();
 		List<Tb_branchDamage> branchDamages  = new ArrayList<Tb_branchDamage>();
 		for (Tb_branch tb_branch : branchs) {
-			branchDamages.add(branchService.queryBanchDamage(tb_branch.getId()));
+			Tb_branchDamage queryBanchDamage = branchService.queryBanchDamage(tb_branch.getId());
+			if(queryBanchDamage != null) {
+				branchDamages.add(queryBanchDamage);
+			}
 		}
+		System.out.println(branchDamages);
 		model.addAttribute("branchDamages", branchDamages);
+		model.addAttribute("branchDamagesSize", branchDamages.size());
 		return "branchTotal";
 	}
 }
